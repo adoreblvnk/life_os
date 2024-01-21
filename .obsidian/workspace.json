@@ -1,0 +1,159 @@
+{
+  "main": {
+    "id": "c50dabc2863dbe39",
+    "type": "split",
+    "children": [
+      {
+        "id": "a8ae2f16e4c26171",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "94caa954e3819a02",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Life_OS.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ec52c5405c3702c0",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f0a72368d784fb9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c384d80e7881598e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0e16707e0c8d4e0d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "829989a5d8073348",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1c7e40206229490d",
+    "type": "split",
+    "children": [
+      {
+        "id": "01d055aa534b838d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ea8f67d67daee8b6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Life_OS.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f3bfb79ea2f525dc",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Life_OS.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "465cb3996c899a97",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "c3b898d77bd3c781",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Life_OS.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "94caa954e3819a02",
+  "lastOpenFiles": [
+    "img/life_os_banner_raw.png",
+    "img/life_os_banner.png",
+    "Life_OS.md",
+    "img/life_OS_logo.png",
+    "README.md",
+    "home/Health.md",
+    "home/Journal.md"
+  ]
+}
