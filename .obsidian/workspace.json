@@ -4,17 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "a8ae2f16e4c26171",
+        "id": "4d9b8a06bb422ab3",
         "type": "tabs",
         "children": [
           {
-            "id": "94caa954e3819a02",
+            "id": "6b243493de2e2ffc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Life_OS.md",
-                "mode": "source",
+                "mode": "preview",
+                "backlinks": false,
                 "source": false
               }
             }
@@ -128,8 +129,21 @@
                 "file": "Life_OS.md"
               }
             }
+          },
+          {
+            "id": "e6ea2ac16b95a1b9",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -141,19 +155,13 @@
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false,
+      "homepage:Open homepage": false
     }
   },
-  "active": "94caa954e3819a02",
+  "active": "6b243493de2e2ffc",
   "lastOpenFiles": [
-    "img/life_os_banner_raw.png",
-    "img/life_os_banner.png",
-    "Life_OS.md",
-    "img/life_OS_logo.png",
-    "README.md",
-    "home/Health.md",
-    "home/Journal.md"
+    "Life_OS.md"
   ]
 }

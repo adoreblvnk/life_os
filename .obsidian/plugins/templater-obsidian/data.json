@@ -1,0 +1,43 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "home/journal",
+      "template": "templates/tp_journal.md"
+    },
+    {
+      "folder": "bin/projects",
+      "template": "templates/tp_project.md"
+    },
+    {
+      "folder": "bin/tasks",
+      "template": "templates/tp_task.md"
+    },
+    {
+      "folder": "bin/learning",
+      "template": "templates/tp_learning.md"
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    ""
+  ],
+  "startup_templates": [
+    ""
+  ],
+  "enable_ribbon_icon": true
+}

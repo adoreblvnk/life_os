@@ -1,11 +1,21 @@
-[[Life_OS | Life OS]] > [[Life_OS#/home| /home]]
+[[Life_OS|Life OS]] > [[Life_OS#/home|/home]]
 
-## Resources
+## 💪 Fitness
 
-### 💪 Fitness
+## 🪵 Resources
 
-### 🍱 Recipes
+- 
 
-## Goals
+## 🎯 Goals
+
+- 
+
+## 🍱 Recipes
+
+## 🪵 Resources
+
+- 
+
+## 🎯 Goals
 
 - 

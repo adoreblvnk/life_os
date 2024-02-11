@@ -1,4 +1,4 @@
-[[Life_OS | Life OS]] > [[Life_OS#/home| /home]]
+[[Life_OS|Life OS]] > [[Life_OS#/home|/home]]
 
 ## 🛒 Shopping List 
 

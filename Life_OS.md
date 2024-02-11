@@ -1,39 +1,51 @@
+---
+obsidianUIMode: preview
+---
+
+
 ![banner](img/life_os_banner.png)
 
-**[[Life_OS | Life OS]]** | [[Life_OS#/boot| /boot]] | [[Life_OS#/home| /home]] | [[Life_OS#/root| /root]] | [[Life_OS#/etc| /etc]] | [[Life_OS#/tmp| /tmp]]
+**[[Life_OS|Life OS]]** | [[Life_OS#/boot|/boot]] | [[Life_OS#/home|/home]] | [[Life_OS#/bin|/bin]] | [[Life_OS#/tmp|/tmp]]
 
 # /boot
 
-![[Important#🗒️ Important]]
+<!-- /boot: What you see when Life OS is first loaded. Keep this short & sweet. -->
 
-![[Unimportant#🗒️ Unimportant]]
+![[ToDo#🔴 Important]]
+
+![[ToDo#🟡 Unimportant]]
 
 ![[Quick_Notes#🗒️ Quick Notes]]
 
 # /home
 
-## [[Journal | 📓 Journal]]
+<!-- /home: Personal items. -->
 
-## [[Health | 💓 Health]]
+## [[home/journal/Journal|📓 Journal]]
 
-## [[Finance | 💷 Finance]]
+## [[Health|💓 Health]]
 
-# /root
+## [[Finance|💷 Finance]]
 
-## [[Projects | 📽️ Projects]]
+# /bin
 
-## [[Learning | 🎓 Learning]]
+<!-- /bin: Tasks are like binaries that get executed by the user. -->
 
-## [[Freelance | ⌨️ Freelance]]
+## [[Tasks|📝Tasks]]
 
-# /etc
+## [[Projects|📽️ Projects]]
 
-## [[Vision_Board | 💜 Vision Board]]
+## [[Learning|🎓 Learning]]
+
+# /tmp
+
+<!-- /tmp: Optional files that can be deleted if unnecessary. -->
+
+## [[Vision_Board|💜 Vision Board]]
+
+## [[Writings|✒️ Writings]]
 
 ## 🔗 Links
 
 - Twitter: [adore_blvnk](https://twitter.com/adore_blvnk)
-
-# /tmp
-
-## [[Writings | ✒️ Writings]]
+- GitHub: [adorerblvnk](https://github.com/adoreblvnk)

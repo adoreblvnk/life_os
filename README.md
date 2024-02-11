@@ -41,7 +41,7 @@ TODO:
   - [ ] show recent tasks in dashboard.
   - [ ] button which adds new tasks at the top.
   - [ ] show recent notes in dashboard.
-  - [ ] new notes created in notes folder.
+  - [x] new notes created in notes folder.
 - /home
   - [ ] today's note refreshes automatically daily.
   - [ ] past notes stored in descending order automatically.
@@ -50,7 +50,7 @@ TODO:
   - [ ] *expenditure uses ledger?*
   - [ ] *expenditure must have a graph.*
   - [ ] *expenditure tracks monthly spending.*
-- /root
+- /bin
   - [ ] show recent 3 projects, learning, & freelance in dashboard.
   - projects
     - [ ] *stylise in kanban board form?*
