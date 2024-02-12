@@ -1,4 +1,4 @@
-[[Life_OS | Life OS]] > [[Life_OS#/home| /home]]
+[[Life_OS|Life OS]] > [[Life_OS#/home|/home]]
 
 <!-- Journal: The journal template is generated when you create a new note from this page. -->
 
@@ -8,4 +8,4 @@
 
 ## Past Journals
 
-- [[2024-01-20]]
+- 
