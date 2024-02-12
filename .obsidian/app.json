@@ -1,4 +1,6 @@
 {
   "alwaysUpdateLinks": true,
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "propertiesInDocument": "source",
+  "attachmentFolderPath": "img"
 }

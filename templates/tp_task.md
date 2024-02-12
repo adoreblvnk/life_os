@@ -11,10 +11,10 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 
 **⏳Estimated time to complete**: 
 
-## 🪵 Resources
-
-
-
 ## 🔄 Sub-Tasks
 
 - [ ] 
+
+## 🪵 Resources
+
+- 
