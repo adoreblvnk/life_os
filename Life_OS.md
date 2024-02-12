@@ -30,7 +30,7 @@ obsidianUIMode: preview
 
 <!-- /bin: Tasks are like binaries that get executed by the user. -->
 
-## [[Tasks|📝Tasks]]
+## [[Tasks|📝 Tasks]]
 
 ## [[Projects|📽️ Projects]]
 
