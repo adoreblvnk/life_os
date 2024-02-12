@@ -29,6 +29,10 @@
     {
       "folder": "bin/learning",
       "template": "templates/tp_learning.md"
+    },
+    {
+      "folder": "home/life_stages",
+      "template": "templates/tp_life_stage.md"
     }
   ],
   "syntax_highlighting": true,
