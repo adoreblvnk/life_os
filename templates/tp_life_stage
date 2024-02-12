@@ -3,17 +3,21 @@ creation_time: <% tp.date.now("YYYY-MM-DD") %>
 last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 ---
 
-[[Life_OS|Life OS]] > [[Life_OS#/bin|/bin]] > [[Projects]]
+[[Life_OS|Life OS]] > [[Life_OS#/home|/home]] > [[Life_Stages]]
 
 ## 📄 Description
 
 <% tp.file.cursor() %>
 
-**⏳Timebox**: 
+**⏳ Start Date**:
+
+**⏳ End Date**:
+
+**⏳ Duration**:
 
 ---
 
-## 📝 Project Tasks
+## 📝 Tasks
 
 ### 🗃️ Backlog
 
@@ -34,9 +38,5 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 ---
 
 ## 🪵 Resources
-
-- 
-
-## 📦 Idea Box
 
 - 

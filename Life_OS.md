@@ -22,6 +22,8 @@ obsidianUIMode: preview
 
 ## [[home/journal/Journal|📓 Journal]]
 
+## [[Life_Stages|⏳ Life Stages]]
+
 ## [[Health|💓 Health]]
 
 ## [[Finance|💷 Finance]]
