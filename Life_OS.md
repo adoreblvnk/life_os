@@ -48,4 +48,4 @@ obsidianUIMode: preview
 ## 🔗 Links
 
 - Twitter: [adore_blvnk](https://twitter.com/adore_blvnk)
-- GitHub: [adorerblvnk](https://github.com/adoreblvnk)
+- GitHub: [adoreblvnk](https://github.com/adoreblvnk)

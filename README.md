@@ -62,4 +62,4 @@ This project is licensed under the terms of the MIT license.
 
 ## Credits
 
-- blvnk
+- [adore_blvnk](https://adore_blvnk)
