@@ -9,7 +9,7 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 
 <% tp.file.cursor() %>
 
-**⏳Estimated time to complete**: 
+**⏳ Timebox**: 
 
 ## 🔄 Sub-Tasks
 

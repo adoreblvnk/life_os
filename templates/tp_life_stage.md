@@ -15,6 +15,10 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 
 **⏳ Duration**:
 
+### 🔗 Links
+
+- 
+
 ---
 
 ## 📝 Tasks
