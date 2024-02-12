@@ -2,7 +2,6 @@
 obsidianUIMode: preview
 ---
 
-
 ![banner](img/life_os_banner.png)
 
 **[[Life_OS|Life OS]]** | [[Life_OS#/boot|/boot]] | [[Life_OS#/home|/home]] | [[Life_OS#/bin|/bin]] | [[Life_OS#/tmp|/tmp]]
