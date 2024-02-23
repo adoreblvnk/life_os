@@ -33,6 +33,10 @@
     {
       "folder": "home/life_stages",
       "template": "templates/tp_life_stage.md"
+    },
+    {
+      "folder": "tmp/writings",
+      "template": "templates/tp_writings.md"
     }
   ],
   "syntax_highlighting": true,
