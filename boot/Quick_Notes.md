@@ -6,9 +6,3 @@
 
 - *continue working on Life OS*
 
-## 🗒️ Notes
-
-<!-- Notes: for longer / less important BUT still ephemeral notes. -->
-
-- 
-

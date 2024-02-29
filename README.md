@@ -15,6 +15,9 @@
 <summary>Table of Contents</summary>
 
 - [About](#about)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
 - [Usage](#usage)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -27,34 +30,33 @@ Life OS management system created in Obsidian as a vault template. Linux-themed.
 
 prod by blvnk.
 
+## Getting Started
+
+### Prerequisites
+
+- [Obsidian](https://obsidian.md/)
+
+### Installation
+
+- Download or clone repository. *Clone for Git sync.*
+- Obsidian > Open folder as vault
+
 ## Usage
 
 ## Roadmap
 
-TODO:
-
-- general
-  - [ ] banner image, but with less whitespace.
-  - [ ] stylise into separate columns on desktop for each category.
-  - [ ] fix styling issues when done.
-- /boot
-  - [ ] show recent tasks in dashboard.
-  - [ ] button which adds new tasks at the top.
-  - [ ] show recent notes in dashboard.
-  - [x] new notes created in notes folder.
-- /home
-  - [ ] today's note refreshes automatically daily.
-  - [ ] past notes stored in descending order automatically.
-  - [ ] *show calendar at the top of journal?*
-  - [ ] finance separated into 3 categories: expenditure, shopping list, and wishlist.
-  - [ ] *expenditure uses ledger?*
-  - [ ] *expenditure must have a graph.*
-  - [ ] *expenditure tracks monthly spending.*
-- /bin
-  - [ ] show recent 3 projects, learning, & freelance in dashboard.
-  - projects
-    - [ ] *stylise in kanban board form?*
-    - [ ] *create project template.*
+- [ ] Homepage
+  - [ ] Add proper banner instead of markdown image.
+  - [ ] Remove properties in view.
+- [ ] /boot
+  - [ ] Archive tasks when done in ToDo.
+- [ ] /home
+  - [ ] Show past journals automatically in descending order (*DataviewJS*).
+  - [ ] Improve / Scrap Health & Finance pages.
+- [ ] /bin
+  - [ ] Drag & drop project status (*Kanban*).
+- [ ] Misc
+  - [ ] Online sync (*Git & GitHub*).
 
 ## License
 
@@ -62,4 +64,4 @@ This project is licensed under the terms of the MIT license.
 
 ## Credits
 
-- [adore_blvnk](https://adore_blvnk)
+- [adore_blvnk](https://twitter.com/adore_blvnk)
