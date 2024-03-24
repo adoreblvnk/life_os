@@ -28,7 +28,7 @@
 
 Life OS management system created in Obsidian as a vault template. Linux-themed.
 
-Version: 0.1.1
+Version: 0.2.1
 
 ## Getting Started
 
