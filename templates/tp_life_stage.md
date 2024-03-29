@@ -1,3 +1,8 @@
+---
+# status: Either "future, in-progress, completed". Case insensitive.
+status: future
+---
+
 [[Life_OS|Life OS]] > [[Life_OS#/home|/home]] > [[Life_Stages]]
 
 ## 📄 Description

@@ -28,5 +28,6 @@
     "editor:undo",
     "editor:redo",
     "editor:configure-toolbar"
-  ]
+  ],
+  "promptDelete": false
 }
