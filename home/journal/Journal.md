@@ -1,4 +1,5 @@
 ---
+aliases: 📓 Journal
 obsidianUIMode: preview
 ---
 
