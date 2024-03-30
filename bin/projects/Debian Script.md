@@ -22,11 +22,12 @@ status: in-progress
 
 ### 🗃️ Backlog
 
-- [ ] 
+- [ ] clean minimal theme
 
 ### ▶️ In Progress
 
-- [ ] dependency list 📅 2024-03-29 
+- [ ] dependency list 📅 2024-03-30
+- [ ] setup pkg configs 📅 2024-04-02 
 
 ### ✅ Done
 
