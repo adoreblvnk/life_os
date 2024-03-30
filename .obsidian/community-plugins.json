@@ -4,5 +4,6 @@
   "homepage",
   "obsidian-view-mode-by-frontmatter",
   "obsidian-tasks-plugin",
-  "dataview"
+  "dataview",
+  "customjs"
 ]

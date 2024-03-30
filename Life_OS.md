@@ -13,6 +13,8 @@ CALENDAR file.ctime
 <!-- /boot: What you see when Life OS is first loaded. Keep this short & sweet. -->
 
 ```dataviewjs
+const { CustomUtils } = customJS;
+
 // order of folder matters & determines order where items in folders are
 // rendered.
 const folders = [
@@ -20,22 +22,8 @@ const folders = [
   '"home/tasks"',
   '"home/life_stages"',
   '"bin/projects"',
-  '"bin/learning"'
+  '"bin/learning"',
 ];
-
-function taskRenderPerFolder(folders, query, groupByFile = false) {
-  for (let i in folders) {
-    // TODO: rewrite to not use eval
-    const queryResults = dv.pages(folders[i]).file.tasks.where(eval(query));
-    if (queryResults.length > 0) {
-      // get last directory then trim trailing double quote
-      let dashboard = folders[i].split("/").pop().slice(0, -1);
-      // pretty display page using alias
-      dv.header(3, "[[" + dashboard + "|" + dv.page(dashboard).aliases + "]]");
-      dv.taskList(queryResults, groupByFile);
-    }
-  }
-}
 
 // task dashboard.
 // each category is ordered by importance and does not show tasks shown in the
@@ -43,18 +31,24 @@ function taskRenderPerFolder(folders, query, groupByFile = false) {
 
 // uncompleted tasks with high priority
 dv.header(2, "⏫ High Priority");
-taskRenderPerFolder(folders, "t => !t.completed && t.text.includes('⏫')");
+CustomUtils.taskRenderPerFolder(
+  dv,
+  folders,
+  "t => !t.completed && t.text.includes('⏫')"
+);
 
 // tasks due today or overdue. does not show tasks shown before
 dv.header(2, "🔴 Due Today / Overdue");
-taskRenderPerFolder(
+CustomUtils.taskRenderPerFolder(
+  dv,
   folders,
   "t => !t.completed && !t.text.includes('⏫') && t.due <= moment()"
 );
 
 // tasks due this week (today + 7 days). does not show tasks shown before
 dv.header(2, "🟠 Due This Week");
-taskRenderPerFolder(
+CustomUtils.taskRenderPerFolder(
+  dv,
   folders,
   `t => !t.completed && !t.text.includes("⏫") && moment() <= t.due
   && t.due <= moment().add(7, "d")`
@@ -62,7 +56,8 @@ taskRenderPerFolder(
 
 // other tasks
 dv.header(2, "🟢 Other Tasks");
-taskRenderPerFolder(
+CustomUtils.taskRenderPerFolder(
+  dv,
   folders,
   `t => !t.completed && !t.text.includes('⏫') && t.text
   && (!t.due || t.due > moment().add(7, "d"))`
