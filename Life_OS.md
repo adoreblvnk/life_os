@@ -23,17 +23,16 @@ const folders = [
   '"bin/learning"'
 ];
 
-function taskRenderPerFolder(folders, query) {
+function taskRenderPerFolder(folders, query, groupByFile = false) {
   for (let i in folders) {
     // TODO: rewrite to not use eval
-    const queryResults = dv.pages(folders[i]).file.tasks
-      .where(eval(query));
+    const queryResults = dv.pages(folders[i]).file.tasks.where(eval(query));
     if (queryResults.length > 0) {
       // get last directory then trim trailing double quote
       let dashboard = folders[i].split("/").pop().slice(0, -1);
       // pretty display page using alias
       dv.header(3, "[[" + dashboard + "|" + dv.page(dashboard).aliases + "]]");
-      dv.taskList(queryResults, false);
+      dv.taskList(queryResults, groupByFile);
     }
   }
 }
