@@ -3,6 +3,9 @@
 status: in-progress
 ---
 
-[[Life_OS|Life OS]] > [[Life_OS#/tmp|/tmp]] > [[Writings]]
+```dataviewjs
+const { CustomUtils } = customJS;
+CustomUtils.navbarMain(dv);
+```
 
 <% tp.file.cursor() %>

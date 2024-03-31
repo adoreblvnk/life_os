@@ -3,7 +3,10 @@
 status: backlog
 ---
 
-[[Life_OS|Life OS]] > [[Life_OS#/bin|/bin]] > [[Tasks]]
+```dataviewjs
+const { CustomUtils } = customJS;
+CustomUtils.navbarMain(dv);
+```
 
 ## 📄 Description
 

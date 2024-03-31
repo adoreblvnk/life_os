@@ -3,7 +3,10 @@
 status: future
 ---
 
-[[Life_OS|Life OS]] > [[Life_OS#/home|/home]] > [[Life_Stages]]
+```dataviewjs
+const { CustomUtils } = customJS;
+CustomUtils.navbarMain(dv);
+```
 
 ## 📄 Description
 
