@@ -26,7 +26,7 @@ CustomUtils.taskRender(dv, '"bin/projects"', "t => !t.completed && t.text");
 LIST
 FROM "bin/projects"
 WHERE file.name != "Projects" AND lower(status) = "backlog"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ▶️ In Progress
@@ -44,7 +44,7 @@ SORT file.mtime DESC
 LIST
 FROM "bin/projects"
 WHERE file.name != "Projects" AND lower(status) = "completed"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ❌ Cancelled
@@ -53,5 +53,5 @@ SORT file.name DESC
 LIST
 FROM "bin/projects"
 WHERE file.name != "Projects" AND lower(status) = "cancelled"
-SORT file.name DESC
+SORT file.mtime DESC
 ```

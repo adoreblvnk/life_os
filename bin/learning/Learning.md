@@ -26,7 +26,7 @@ CustomUtils.taskRender(dv, '"bin/learning"', "t => !t.completed && t.text");
 LIST
 FROM "bin/learning"
 WHERE file.name != "Learning" AND lower(status) = "backlog"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ▶️ In Progress
@@ -35,7 +35,7 @@ SORT file.name DESC
 LIST
 FROM "bin/learning"
 WHERE file.name != "Learning" AND lower(status) = "in-progress"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ✅ Completed
@@ -44,7 +44,7 @@ SORT file.name DESC
 LIST
 FROM "bin/learning"
 WHERE file.name != "Learning" AND lower(status) = "completed"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ❌ Cancelled
@@ -53,5 +53,5 @@ SORT file.name DESC
 LIST
 FROM "bin/learning"
 WHERE file.name != "Learning" AND lower(status) = "cancelled"
-SORT file.name DESC
+SORT file.mtime DESC
 ```

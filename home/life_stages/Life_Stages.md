@@ -24,7 +24,7 @@ CustomUtils.taskRender(dv, '"home/life_stages"', "t => !t.completed && t.text");
 LIST
 FROM "home/life_stages"
 WHERE file.name != "Life_Stages" AND lower(status) = "future"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ▶️ In Progress
@@ -33,7 +33,7 @@ SORT file.name DESC
 LIST
 FROM "home/life_stages"
 WHERE file.name != "Life_Stages" AND lower(status) = "in-progress"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ✅ Completed
@@ -42,5 +42,5 @@ SORT file.name DESC
 LIST
 FROM "home/life_stages"
 WHERE file.name != "Life_Stages" AND lower(status) = "completed"
-SORT file.name DESC
+SORT file.mtime DESC
 ```

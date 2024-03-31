@@ -24,7 +24,7 @@ CustomUtils.taskRender(dv, '"home/tasks"', "t => !t.completed && t.text");
 LIST
 FROM "home/tasks"
 WHERE file.name != "Tasks" AND lower(status) = "backlog"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ▶️ In Progress
@@ -33,7 +33,7 @@ SORT file.name DESC
 LIST
 FROM "home/tasks"
 WHERE file.name != "Tasks" AND lower(status) = "in-progress"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ✅ Completed
@@ -42,7 +42,7 @@ SORT file.name DESC
 LIST
 FROM "home/tasks"
 WHERE file.name != "Tasks" AND lower(status) = "completed"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
 
 ## ❌ Cancelled
@@ -51,5 +51,5 @@ SORT file.name DESC
 LIST
 FROM "home/tasks"
 WHERE file.name != "Tasks" AND lower(status) = "cancelled"
-SORT file.name DESC
+SORT file.mtime DESC
 ```
