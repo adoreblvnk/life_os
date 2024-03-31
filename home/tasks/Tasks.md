@@ -7,6 +7,14 @@ obsidianUIMode: preview
 
 <!-- Tasks: For more detailed items, usually involving sub-tasks, & has a duration of >3 days. The task template is generated when you create a new note from this page. -->
 
+```dataviewjs
+const { CustomUtils } = customJS;
+
+// uncompleted tasks
+dv.header(2, "🔄 To Do");
+CustomUtils.taskRender(dv, '"home/tasks"', "t => !t.completed && t.text");
+```
+
 ## 🗃️ Backlog
 
 ```dataview

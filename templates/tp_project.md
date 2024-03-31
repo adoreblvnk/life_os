@@ -38,6 +38,8 @@ dv.header(3, "❌ Cancelled");
 CustomUtils.taskRenderCurrent(dv, "t => t.text && !t.completed && t.checked");
 ```
 
+> [[#Tasks|Add Task]]
+
 ---
 
 ## 🪵 Resources
