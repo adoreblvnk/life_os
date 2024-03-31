@@ -3,7 +3,10 @@ aliases: 🎓 Learning
 obsidianUIMode: preview
 ---
 
-[[Life_OS|Life OS]] > [[Life_OS#/bin|/bin]]
+```dataviewjs
+const { CustomUtils } = customJS;
+CustomUtils.navbarMain(dv);
+```
 
 <!-- Learning: Courses & learning workshops. The learning template is generated when you create a new note from this page. -->
 

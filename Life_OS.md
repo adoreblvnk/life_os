@@ -1,4 +1,5 @@
 ---
+aliases: Life OS
 obsidianUIMode: preview
 ---
 
@@ -6,18 +7,21 @@ obsidianUIMode: preview
 CALENDAR file.ctime
 ```
 
-**[[Life_OS|Life OS]]** | [[Life_OS#/boot|/boot]] | [[Life_OS#/home|/home]] | [[Life_OS#/bin|/bin]] | [[Life_OS#/tmp|/tmp]]
+```dataviewjs
+const { CustomUtils } = customJS;
+CustomUtils.navbarMain(dv);
+```
 
-# /boot
+# 📝 Task Dashboard
 
-<!-- /boot: What you see when Life OS is first loaded. Keep this short & sweet. -->
+<!-- Task Dashboard: Each category is ordered by importance and does not show tasks shown in the previous category. -->
 
 ```dataviewjs
 const { CustomUtils } = customJS;
 
 // order of folder matters & determines order where items in folders are
 // rendered.
-const folders = [
+const FOLDERS = [
   '"home/journal"',
   '"home/tasks"',
   '"home/life_stages"',
@@ -25,15 +29,11 @@ const folders = [
   '"bin/learning"',
 ];
 
-// task dashboard.
-// each category is ordered by importance and does not show tasks shown in the
-// previous category.
-
 // uncompleted tasks with high priority
 dv.header(2, "⏫ High Priority");
 CustomUtils.taskRenderPerFolder(
   dv,
-  folders,
+  FOLDERS,
   "t => !t.completed && t.text.includes('⏫')"
 );
 
@@ -41,7 +41,7 @@ CustomUtils.taskRenderPerFolder(
 dv.header(2, "🔴 Due Today / Overdue");
 CustomUtils.taskRenderPerFolder(
   dv,
-  folders,
+  FOLDERS,
   "t => !t.completed && !t.text.includes('⏫') && t.due <= moment()"
 );
 
@@ -49,7 +49,7 @@ CustomUtils.taskRenderPerFolder(
 dv.header(2, "🟠 Due This Week");
 CustomUtils.taskRenderPerFolder(
   dv,
-  folders,
+  FOLDERS,
   `t => !t.completed && !t.text.includes("⏫") && moment() <= t.due
   && t.due <= moment().add(7, "d")`
 );
@@ -58,7 +58,7 @@ CustomUtils.taskRenderPerFolder(
 dv.header(2, "🟢 Other Tasks");
 CustomUtils.taskRenderPerFolder(
   dv,
-  folders,
+  FOLDERS,
   `t => !t.completed && !t.text.includes('⏫') && t.text
   && (!t.due || t.due > moment().add(7, "d"))`
 );
@@ -66,15 +66,17 @@ CustomUtils.taskRenderPerFolder(
 
 ![[Quick_Notes#🗒️ Quick Notes]]
 
+---
+
 # /home
 
 <!-- /home: Personal items. -->
 
 ## [[Journal|📓 Journal]]
 
-## [[Life_Stages|⏳ Life Stages]]
-
 ## [[Tasks|📝 Tasks]]
+
+## [[Life_Stages|⏳ Life Stages]]
   
 # /bin
 

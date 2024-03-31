@@ -2,7 +2,10 @@
 aliases: 🗒️ Quick Notes
 ---
 
-[[Life_OS | Life OS]] > [[Life_OS#/boot| /boot]]
+```dataviewjs
+const { CustomUtils } = customJS;
+CustomUtils.navbarMain(dv);
+```
 
 ### 🗒️ Quick Notes
 

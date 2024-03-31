@@ -3,7 +3,10 @@ aliases: 📓 Journal
 obsidianUIMode: preview
 ---
 
-[[Life_OS|Life OS]] > [[Life_OS#/home|/home]]
+```dataviewjs
+const { CustomUtils } = customJS;
+CustomUtils.navbarMain(dv);
+```
 
 <!-- Journal: The journal template is generated when you create a new note in this folder. -->
 
