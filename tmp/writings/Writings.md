@@ -1,4 +1,11 @@
-[[Life_OS|Life OS]] > [[Life_OS#/tmp|/tmp]]
+---
+aliases: ✒️ Writings
+---
+
+```dataviewjs
+const { CustomUtils } = customJS;
+CustomUtils.navbarMain(dv);
+```
 
 <!-- Writings: Longform content. -->
 

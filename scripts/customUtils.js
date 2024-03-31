@@ -10,9 +10,12 @@ class CustomUtils {
       "Life_Stages",
       "Projects",
       "Learning",
+      "Writings",
     ];
   }
 
+  // Renders navbar for main dashboard pages
+  // <page> | **<current_page>** ...
   navbarMain(dv) {
     let navbar = "";
     for (let i = 0; i < this.MAIN_PAGES.length - 1; i++) {
@@ -26,6 +29,17 @@ class CustomUtils {
     let lastPg = this.MAIN_PAGES.at(-1);
     navbar += `[[${lastPg}|${dv.page(lastPg).file.aliases[0]}]]`;
     dv.paragraph(navbar);
+    return;
+  }
+
+  navbarJournal(dv) {
+    let yesterday = moment(dv.current().file.name)
+      .subtract(1, "d")
+      .format("YYYY-MM-DD");
+    let tomorrow = moment(dv.current().file.name)
+      .add(1, "d")
+      .format("YYYY-MM-DD");
+    dv.paragraph(`[[${yesterday}|Yesterday]] | [[${tomorrow}|Tomorrow]]`);
     return;
   }
 

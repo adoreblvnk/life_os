@@ -90,8 +90,6 @@ CustomUtils.taskRenderPerFolder(
 
 <!-- /tmp: Optional files that can be deleted if unnecessary. -->
 
-## [[Vision_Board|💜 Vision Board]]
-
 ## [[Writings|✒️ Writings]]
 
 ## 🔗 Links
