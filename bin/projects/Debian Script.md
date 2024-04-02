@@ -3,7 +3,10 @@
 status: in-progress
 ---
 
-[[Life_OS|Life OS]] > [[Life_OS#/bin|/bin]] > [[Projects]]
+```dataviewjs
+const { CustomUtils } = customJS;
+CustomUtils.navbarMain(dv);
+```
 
 ## 📄 Description
 
