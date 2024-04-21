@@ -39,7 +39,7 @@ Created in Obsidian, packaged as a Obsidian vault template.
 
 ### Installation
 
-- Download / Clone repository.
+- [Download](https://github.com/adoreblvnk/life_os/archive/refs/tags/v0.1.0.zip) / Clone repository.
 - Obsidian > Open folder as vault > Trust author and enable plugins
 
 ## Usage
