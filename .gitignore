@@ -1,0 +1,6 @@
+# workspace cache
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# unecessary Obsidian files
+.obsidian/hotkeys.json

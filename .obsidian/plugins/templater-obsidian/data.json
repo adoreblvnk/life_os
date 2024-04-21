@@ -1,0 +1,51 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "data/templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "1_journal",
+      "template": "data/templates/tp_journal.md"
+    },
+    {
+      "folder": "2_primary/tasks",
+      "template": "data/templates/tp_task.md"
+    },
+    {
+      "folder": "2_primary/life_stages",
+      "template": "data/templates/tp_life_stage.md"
+    },
+    {
+      "folder": "3_collections/projects",
+      "template": "data/templates/tp_project.md"
+    },
+    {
+      "folder": "3_collections/learning",
+      "template": "data/templates/tp_learning.md"
+    },
+    {
+      "folder": "3_collections/writings",
+      "template": "data/templates/tp_writings.md"
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    ""
+  ],
+  "startup_templates": [
+    ""
+  ],
+  "enable_ribbon_icon": true
+}
