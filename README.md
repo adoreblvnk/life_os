@@ -19,6 +19,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+  - [Bugs](#bugs)
 - [Roadmap](#roadmap)
 - [License](#license)
 - [Credits](#credits)
@@ -42,6 +43,14 @@ Created in Obsidian, packaged as a Obsidian vault template.
 - Obsidian > Open folder as vault > Trust author and enable plugins
 
 ## Usage
+
+### Bugs
+
+- Javascript not rendering.
+  - ```
+    TypeError: Cannot read properties of undefined (reading 'file')
+    ```
+  - Fix: Reload DataviewJS block / close & reopen page. This occurs when Dataview fails to execute a query in time. Not a byproduct of Life OS' code.
 
 ## Roadmap
 
