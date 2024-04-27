@@ -29,7 +29,10 @@
     - [Projects](#projects)
     - [Learning](#learning)
     - [Writings](#writings)
-  - [Online sync to Github via Obsidian Git](#online-sync-to-github-via-obsidian-git)
+  - [Online sync to GitHub via Obsidian Git](#online-sync-to-github-via-obsidian-git)
+    - [Linux / macOS / Windows](#linux--macos--windows)
+    - [Android / iOS](#android--ios)
+    - [Pushing / Pulling (Syncing)](#pushing--pulling-syncing)
   - [Bugs](#bugs)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -75,7 +78,30 @@ Created in Obsidian, packaged as a Obsidian vault template.
 
 #### Writings
 
-### Online sync to Github via [Obsidian Git](https://publish.obsidian.md/git-doc/)
+### Online sync to GitHub via [Obsidian Git](https://publish.obsidian.md/git-doc/Getting+Started#Start%20with%20existing%20remote%20repository)
+
+Prior to this, you should've cloned / downloaded Life OS. Ensure that the `.git` folder exists.
+
+1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository#creating-a-new-repository-from-the-web-ui) your personal GitHub repository.
+
+#### Linux / macOS / Windows
+
+1. Follow the steps in Obsidian Git's [Authentication](https://publish.obsidian.md/git-doc/Authentication).
+2. Link your GitHub repo via [changing the remote repository's URL](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url) or via Obsidian's Command palette *(see [Android / iOS](#android--ios))*.
+
+#### Android / iOS
+
+1. Create a [Personal Access Token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) with minimal permissions of "Read access to metadata" & "Read and Write access to administration, code, commit statuses, and pull requests".
+2. In Obsidian settings, go to Community Plugins > Git > Authentication/Commit Author.
+3. Enter your username, PAT, author name, & author email.
+   - *NOTE: Enter your author name & author email as per your GitHub username & email.*
+   - *TIP: Use GitHub's [noreply](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address?platform=windows#about-commit-email-addresses) email address for privacy.*
+4. Open Obsidian's Command palette > Git: Edit remotes > origin. Enter the URL of the GitHub repo you created.
+
+#### Pushing / Pulling (Syncing)
+
+1. To pull new changes from remote, use Obsidian's Command palette > Git: Pull.
+2. To push local changes to remote, use Obsidian's Command palette > Git: Push.
 
 ### Bugs
 
