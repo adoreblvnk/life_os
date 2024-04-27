@@ -5,7 +5,7 @@
     Life management system to organise & manage your life as an Obsidian vault.
   </p> <!-- Description -->
   <p>
-    Built With: <a href="https://obsidian.md/">Obsidian</a>
+    Built With: <a href="https://obsidian.md/">Obsidian</a> &bull; <a href="https://blacksmithgu.github.io/obsidian-dataview/">Dataview</a> &bull; <a href="https://github.com/saml-dev/obsidian-custom-js">CustomJS</a>
   </p> <!-- Built With -->
 </div>
 
@@ -15,10 +15,21 @@
 <summary>Table of Contents</summary>
 
 - [About](#about)
+- [Demo](#demo)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+  - [Documentation](#documentation)
+    - [Life OS](#life-os)
+    - [Quick Notes](#quick-notes)
+    - [Journal](#journal)
+    - [Tasks](#tasks)
+    - [Life Stages](#life-stages)
+    - [Projects](#projects)
+    - [Learning](#learning)
+    - [Writings](#writings)
+  - [Online sync to Github via Obsidian Git](#online-sync-to-github-via-obsidian-git)
   - [Bugs](#bugs)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -31,6 +42,8 @@ Life OS is a note-taking, task-setting system that helps you to organise, track,
 
 Created in Obsidian, packaged as a Obsidian vault template.
 
+## Demo
+
 ## Getting Started
 
 ### Prerequisites
@@ -39,10 +52,30 @@ Created in Obsidian, packaged as a Obsidian vault template.
 
 ### Installation
 
-- [Download](https://github.com/adoreblvnk/life_os/archive/refs/tags/v0.1.0.zip) / Clone repository.
+- [Download](https://github.com/adoreblvnk/life_os/archive/refs/tags/v0.1.0.zip) / Clone repository (for latest updates).
 - Obsidian > Open folder as vault > Trust author and enable plugins
 
 ## Usage
+
+### Documentation
+
+#### Life OS
+
+#### Quick Notes
+
+#### Journal
+
+#### Tasks
+
+#### Life Stages
+
+#### Projects
+
+#### Learning
+
+#### Writings
+
+### Online sync to Github via [Obsidian Git](https://publish.obsidian.md/git-doc/)
 
 ### Bugs
 
@@ -54,7 +87,9 @@ Created in Obsidian, packaged as a Obsidian vault template.
 
 ## Roadmap
 
-- [ ] Online sync to GitHub
+- [ ] Clean up code in `CustomUtils`.
+- [ ] Implement dashboard banners for aesthetics.
+- [ ] Data visualisation charts for metadata (eg done tasks).
 
 ## License
 
@@ -66,10 +101,9 @@ This project is licensed under the terms of the MIT license.
 
 ## Acknowledgements  <!-- omit in toc -->
 
-- [Dataview](https://blacksmithgu.github.io/obsidian-dataview/)
-- [CustomJS](https://github.com/saml-dev/obsidian-custom-js)
 - [Obsidian Tasks](https://github.com/obsidian-tasks-group/obsidian-tasks)
 - [Templater](https://github.com/SilentVoid13/Templater)
 - [Homepage](https://github.com/mirnovov/obsidian-homepage)
 - [Set View Mode per Note](https://github.com/AlexDavies8/obsidian-frontmatter-viewmode)
 - [Emoji Toolbar](https://github.com/oliveryh/obsidian-emoji-toolbar)
+- [Obsidian Git](https://github.com/denolehov/obsidian-git)

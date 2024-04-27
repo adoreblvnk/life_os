@@ -4,3 +4,6 @@
 
 # unecessary Obsidian files
 .obsidian/hotkeys.json
+
+# trash
+./trash
