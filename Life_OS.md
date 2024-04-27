@@ -47,8 +47,6 @@ CustomUtils.renderGlobalTasks(
 );
 ```
 
-![[Quick_Notes#🗒️ Quick Notes]]
-
 ---
 
 # 📄 Pages
@@ -56,6 +54,10 @@ CustomUtils.renderGlobalTasks(
 <!-- Pages: Personal items. -->
 
 ```dataviewjs
+const { CustomUtils } = customJS;
+
+CustomUtils.listFirstNote(dv);
+
 let journal = dv.page("Journal").file;
 dv.header(2, `[[${journal.name}|${journal.aliases[0]}]]`);
 

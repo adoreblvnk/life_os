@@ -19,6 +19,10 @@
       "template": "data/templates/tp_journal.md"
     },
     {
+      "folder": "2_primary/quick_notes",
+      "template": "data/templates/tp_quick_notes.md"
+    },
+    {
       "folder": "2_primary/tasks",
       "template": "data/templates/tp_task.md"
     },

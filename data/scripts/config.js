@@ -8,6 +8,7 @@ class Config {
    */
   dashboards = [
     "Life_OS",
+    "Quick_Notes",
     "Journal",
     "Tasks",
     "Life_Stages",
@@ -21,6 +22,7 @@ class Config {
    * @type {Object.<string, string>}
    */
   folders = {
+    Quick_Notes: '"2_primary/quick_notes"',
     Journal: '"1_journal"',
     Tasks: '"2_primary/tasks"',
     Life_Stages: '"2_primary/life_stages"',

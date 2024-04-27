@@ -33,7 +33,7 @@ class CustomUtils {
 
   /**
    * Renders navbar for journal
-   * 
+   *
    * @param {object} dv - DataviewAPI
    * @example
    * // Yesterday | Tomorrow
@@ -71,6 +71,44 @@ class CustomUtils {
     } else {
       dv.paragraph("No pages to show.");
     }
+  }
+
+  /**
+   * List notes & embed their content
+   *
+   * @param {object} dv - DataviewAPI
+   */
+  listNotes(dv) {
+    let pages = dv
+      .pages(`"${dv.current().file.folder}"`)
+      .where((p) => p.file.name != dv.current().file.name)
+      .sort((p) => p.file.mtime, "desc");
+    for (let page of pages) {
+      dv.header(3, page.file.link);
+      let content = dv.sectionLink(page.file.path, "🗒️ Notes", true);
+      dv.paragraph(content);
+    }
+  }
+
+  /**
+   * Lists the first note & embeds its content if exists
+   *
+   * @param {object} dv - DataviewAPI
+   * @param {string} dashboard - Quick Notes dashboard
+   */
+  listFirstNote(dv, dashboard = "Quick_Notes") {
+    const { Config } = customJS;
+    let pages = dv
+      .pages(`${Config.folders[dashboard]}`)
+      .where((p) => p.file.name != dashboard)
+      .sort((p) => p.file.mtime, "desc")
+      .limit(1);
+    let headerText = `[[${dashboard}|${dv.page(dashboard).file.aliases[0]}]]`;
+    if (pages.length > 0) {
+      headerText += ` > ${pages[0].file.link}`;
+    }
+    dv.header(2, headerText);
+    dv.paragraph(dv.sectionLink(pages[0]?.file.path, "🗒️ Notes", true));
   }
 
   /**
