@@ -47,6 +47,20 @@ Created in Obsidian, packaged as a Obsidian vault template.
 
 ## Demo
 
+All demo files are stored in `data/demo` folder. To interact with the demo vault, use the script `data/demo/demo.sh`.
+
+Run demo:
+
+```bash
+./data/demo/demo.sh
+```
+
+Uninstall (moves demo files back to demo folder):
+
+```bash
+./data/demo/demo.sh uninstall
+```
+
 ## Getting Started
 
 ### Prerequisites

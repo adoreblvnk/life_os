@@ -1,7 +1,7 @@
 /**
  * Helper functions for rendering Dataview queries
  */
-class CustomUtils {
+class CustomUtils extends customJS.Config.constructor {
   // NOTE: methods that use Dataview require dv to be passed as a parameter.
 
   /**
@@ -12,9 +12,8 @@ class CustomUtils {
    * // <page> | **<current_page>** | <page> ...
    */
   navbarMain(dv) {
-    const { Config } = customJS;
     // get list of dashboard pages from Config
-    let dashboards = Config.dashboards;
+    let dashboards = this.dashboards;
     let navbar = "";
     for (let i = 0; i < dashboards.length - 1; i++) {
       let pg = dashboards[i];
@@ -57,9 +56,8 @@ class CustomUtils {
    * @param {string} status - Status according to frontmatter YAML in page
    */
   listCurrentPages(dv, status) {
-    const { Config } = customJS;
     // render page status header text
-    dv.header(2, Config.pageStatus[status]);
+    dv.header(2, this.pageStatus[status]);
     // exclude dashboard file, search pages with queried status, then sort by
     // most to least recently accessed
     let pages = dv
@@ -97,9 +95,8 @@ class CustomUtils {
    * @param {string} dashboard - Quick Notes dashboard
    */
   listFirstNote(dv, dashboard = "Quick_Notes") {
-    const { Config } = customJS;
     let pages = dv
-      .pages(`${Config.folders[dashboard]}`)
+      .pages(`${this.folders[dashboard]}`)
       .where((p) => p.file.name != dashboard)
       .sort((p) => p.file.mtime, "desc")
       .limit(1);
@@ -117,12 +114,11 @@ class CustomUtils {
    * @param {object} dv - DataviewAPI
    */
   pastJournals(dv) {
-    const { Config } = customJS;
     // exclude Journal dashboard & today's journal, then sort from newest to
     // oldest
     dv.list(
       dv
-        .pages(Config.folders.Journal)
+        .pages(this.folders.Journal)
         .file.where(
           (p) => !["Journal", moment().format("YYYY-MM-DD")].includes(p.name)
         )
@@ -163,9 +159,8 @@ class CustomUtils {
    * @param {object} dv - DataviewAPI
    */
   renderCurrentTasks(dv) {
-    const { Config } = customJS;
     // get page type from current page frontmatter
-    let taskStatuses = Config.pageTaskStatuses[dv.current().pageType];
+    let taskStatuses = this.pageTaskStatuses[dv.current().pageType];
     // NOTE: `status` is not equivalent to item status in
     // https://blacksmithgu.github.io/obsidian-dataview/annotation/metadata-tasks/
     for (let status in taskStatuses) {
@@ -186,8 +181,7 @@ class CustomUtils {
    * @param {object} dv - DataviewAPI
    */
   todoTasks(dv) {
-    const { Config } = customJS;
-    let todo = Config.pageTaskStatuses.ToDo;
+    let todo = this.pageTaskStatuses.ToDo;
     // render header text from Config
     dv.header(3, todo.header);
     let taskResults = this.getTasks(
@@ -208,8 +202,7 @@ class CustomUtils {
    * @param {string} query WHERE clause query
    */
   renderGlobalTasks(dv, query) {
-    const { Config } = customJS;
-    let folders = Config.folders;
+    let folders = this.folders;
     for (let folder in folders) {
       // NOTE: limit global tasks per page type to 3
       let taskResults = this.getTasks(dv, query, folders[folder], 3);
@@ -218,5 +211,40 @@ class CustomUtils {
         dv.taskList(taskResults);
       }
     }
+  }
+
+  // METADATA
+
+  /**
+   * Renders time spent on Life OS
+   * @param {object} dv DataviewAPI
+   */
+  timeSpent(dv) {
+    let firstFile = dv.pages().file.sort((t) => t.ctime)[0];
+    // NOTE: moment.js is inaccurate, hence using raw date manipulation
+    let totalDays = Math.ceil(
+      (new Date() - firstFile.ctime) / (1000 * 60 * 60 * 24)
+    );
+    // exclude data folder
+    let allFiles = dv.pages('!"data"').file;
+    let totalFiles = allFiles.length;
+    let totalTasks = allFiles.tasks.length;
+
+    dv.paragraph(
+      `You have been using [[Life_OS]] for ${totalDays} days, with ${totalFiles} files & ${totalTasks} tasks created.`
+    );
+  }
+
+  /**
+   * Renders 5 most recently modified pages in a list
+   * @param {object} dv DataviewAPI
+   */
+  recentlyModified(dv) {
+    dv.list(
+      dv
+        .pages()
+        .sort((p) => p.file.mtime, "desc")
+        .limit(5).file.link
+    );
   }
 }

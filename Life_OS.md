@@ -3,10 +3,6 @@ aliases: Life OS
 obsidianUIMode: preview
 ---
 
-```dataview
-CALENDAR file.mtime
-```
-
 ```dataviewjs
 await dv.view("data/views/navbar");
 ```
@@ -75,6 +71,19 @@ dv.header(2, `[[${learning.name}|${learning.aliases[0]}]]`);
 
 let writings = dv.page("Writings").file;
 dv.header(2, `[[${writings.name}|${writings.aliases[0]}]]`);
+```
+
+---
+
+# 〽️ Stats
+
+```dataviewjs
+const { CustomUtils } = customJS;
+
+CustomUtils.timeSpent(dv);
+
+dv.paragraph("Recently modified files:")
+CustomUtils.recentlyModified(dv);
 ```
 
 # 🔗 Links
