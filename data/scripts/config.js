@@ -22,13 +22,13 @@ class Config {
    * @type {Object.<string, string>}
    */
   folders = {
-    Quick_Notes: '"2_primary/quick_notes"',
-    Journal: '"1_journal"',
-    Tasks: '"2_primary/tasks"',
-    Life_Stages: '"2_primary/life_stages"',
-    Projects: '"3_collections/projects"',
-    Learning: '"3_collections/learning"',
-    Writings: '"3_collections/writings"',
+    Quick_Notes: '"pages/0_quick_notes"',
+    Journal: '"pages/1_journal"',
+    Tasks: '"pages/2_tasks"',
+    Life_Stages: '"pages/3_life_stages"',
+    Projects: '"pages/4_projects"',
+    Learning: '"pages/5_learning"',
+    Writings: '"pages/6_writings"',
   };
 
   /**

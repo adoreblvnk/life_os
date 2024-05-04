@@ -119,10 +119,11 @@ class CustomUtils extends customJS.Config.constructor {
     dv.list(
       dv
         .pages(this.folders.Journal)
-        .file.where(
-          (p) => !["Journal", moment().format("YYYY-MM-DD")].includes(p.name)
+        .where(
+          (p) =>
+            !["Journal", moment().format("YYYY-MM-DD")].includes(p.file.name)
         )
-        .sort((p) => p.name, "desc").link
+        .sort((p) => p.file.name, "desc").file.link
     );
   }
 
@@ -130,7 +131,7 @@ class CustomUtils extends customJS.Config.constructor {
 
   /**
    * Gets pages containing task query results in current page (default) or
-   * folder.
+   * folder
    *
    * @param {object} dv - DataviewAPI
    * @param {string} query - WHERE clause query
@@ -213,6 +214,16 @@ class CustomUtils extends customJS.Config.constructor {
     }
   }
 
+  /**
+   * Gets number of tasks that are fully completed
+   * @param {object} dv - DataviewAPI
+   * @returns Number of tasks fully completed
+   */
+  completedTasks(dv) {
+    let taskResults = this.getTasks(dv, "t => t.fullyCompleted", '!"data"');
+    return taskResults.length;
+  }
+
   // METADATA
 
   /**
@@ -223,7 +234,7 @@ class CustomUtils extends customJS.Config.constructor {
     let firstFile = dv.pages().file.sort((t) => t.ctime)[0];
     // NOTE: moment.js is inaccurate, hence using raw date manipulation
     let totalDays = Math.ceil(
-      (new Date() - firstFile.ctime) / (1000 * 60 * 60 * 24)
+      dv.date("now").diff(firstFile.ctime, "days").toObject().days
     );
     // exclude data folder
     let allFiles = dv.pages('!"data"').file;
@@ -242,7 +253,7 @@ class CustomUtils extends customJS.Config.constructor {
   recentlyModified(dv) {
     dv.list(
       dv
-        .pages()
+        .pages('!"data"')
         .sort((p) => p.file.mtime, "desc")
         .limit(5).file.link
     );

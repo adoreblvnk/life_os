@@ -15,31 +15,31 @@
   "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "1_journal",
-      "template": "data/templates/tp_journal.md"
-    },
-    {
-      "folder": "2_primary/quick_notes",
+      "folder": "pages/0_quick_notes",
       "template": "data/templates/tp_quick_notes.md"
     },
     {
-      "folder": "2_primary/tasks",
+      "folder": "pages/1_journal",
+      "template": "data/templates/tp_journal.md"
+    },
+    {
+      "folder": "pages/2_tasks",
       "template": "data/templates/tp_task.md"
     },
     {
-      "folder": "2_primary/life_stages",
+      "folder": "pages/3_life_stages",
       "template": "data/templates/tp_life_stage.md"
     },
     {
-      "folder": "3_collections/projects",
+      "folder": "pages/4_projects",
       "template": "data/templates/tp_project.md"
     },
     {
-      "folder": "3_collections/learning",
+      "folder": "pages/5_learning",
       "template": "data/templates/tp_learning.md"
     },
     {
-      "folder": "3_collections/writings",
+      "folder": "pages/6_writings",
       "template": "data/templates/tp_writings.md"
     }
   ],

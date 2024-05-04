@@ -7,6 +7,6 @@ status: in-progress # in-progress, completed
 await dv.view("data/views/navbar");
 ```
 
-#### 🗒️ Notes
+### 🗒️ Notes
 
 <% tp.file.cursor() %>

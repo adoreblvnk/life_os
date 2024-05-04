@@ -84,6 +84,8 @@ CustomUtils.timeSpent(dv);
 
 dv.paragraph("Recently modified files:")
 CustomUtils.recentlyModified(dv);
+
+dv.paragraph(`Completed Tasks: ${CustomUtils.completedTasks(dv)}`)
 ```
 
 # 🔗 Links

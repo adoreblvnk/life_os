@@ -1,6 +1,6 @@
 ---
 pageType: Projects
-status: in-progress # backlog, in-progress, completed, cancelled
+status: in-progress
 ---
 
 ```dataviewjs
@@ -11,7 +11,9 @@ await dv.view("data/views/navbar");
 
 
 
-**⏳Timebox**: 
+<!-- Timebox: <start_date> - <end_date> -->
+
+**⏳ Timebox**: 4 May 2024 - 
 
 ### 🔗 Links
 
@@ -25,7 +27,7 @@ await dv.view("data/views/navbar");
 await dv.view("data/views/currentTasks");
 ```
 
-> [[#Tasks|Add Task]]
+> [[#📝 Tasks|Add Task]]
 
 ---
 
@@ -45,7 +47,7 @@ await dv.view("data/views/tips", { tip: "addTask" });
 
 - [x] dependency list 🛫 📅 2024-04-05 ✅ 2024-04-05
 - [-] clean minimal theme
-- [ ] setup pkg configs 🛫 📅 2024-04-02
+- [ ] setup pkg configs 🛫 📅 2024-05-05
 	- [ ] git
 - [ ] setup security settings (ufw)
 

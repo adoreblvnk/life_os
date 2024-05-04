@@ -13,7 +13,7 @@ await dv.view("data/views/navbar");
 
 <!-- Timebox: <start_date> - <end_date> -->
 
-**⏳Timebox**: 
+**⏳ Timebox**: <% tp.date.now("D MMM YYYY") %> - 
 
 ### 🔗 Links
 
@@ -27,7 +27,7 @@ await dv.view("data/views/navbar");
 await dv.view("data/views/currentTasks");
 ```
 
-> [[#Tasks|Add Task]]
+> [[#📝 Tasks|Add Task]]
 
 ---
 

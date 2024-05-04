@@ -16,7 +16,8 @@ await dv.view("data/views/currentTasks");
 dv.paragraph("---");
 
 // Today's Journal: Displays today's journal.
-dv.header(2, `Today's Journal: [[${moment().format("YYYY-MM-DD")}]]`);
+let today = moment().format("YYYY-MM-DD");
+dv.header(2, `Today's Journal: [[${today}|${moment().format("D MMM YYYY")}]]`);
 
 // Past Journals: List past journals, sorted from newest to oldest.
 dv.header(2, "⌛ Past Journals");
