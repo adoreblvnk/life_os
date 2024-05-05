@@ -6,7 +6,6 @@ class CustomUtils extends customJS.Config.constructor {
 
   /**
    * Renders navbar for dashboard pages
-   *
    * @param {object} dv - DataviewAPI
    * @example
    * // <page> | **<current_page>** | <page> ...
@@ -32,7 +31,6 @@ class CustomUtils extends customJS.Config.constructor {
 
   /**
    * Renders navbar for journal
-   *
    * @param {object} dv - DataviewAPI
    * @example
    * // Yesterday | Tomorrow
@@ -51,7 +49,6 @@ class CustomUtils extends customJS.Config.constructor {
 
   /**
    * List pages in current folder according to page status
-   *
    * @param {object} dv - DataviewAPI
    * @param {string} status - Status according to frontmatter YAML in page
    */
@@ -73,7 +70,6 @@ class CustomUtils extends customJS.Config.constructor {
 
   /**
    * List notes & embed their content
-   *
    * @param {object} dv - DataviewAPI
    */
   listNotes(dv) {
@@ -90,7 +86,6 @@ class CustomUtils extends customJS.Config.constructor {
 
   /**
    * Lists the first note & embeds its content if exists
-   *
    * @param {object} dv - DataviewAPI
    * @param {string} dashboard - Quick Notes dashboard
    */
@@ -110,7 +105,6 @@ class CustomUtils extends customJS.Config.constructor {
 
   /**
    * List past journal entries
-   *
    * @param {object} dv - DataviewAPI
    */
   pastJournals(dv) {
@@ -132,7 +126,6 @@ class CustomUtils extends customJS.Config.constructor {
   /**
    * Gets pages containing task query results in current page (default) or
    * folder
-   *
    * @param {object} dv - DataviewAPI
    * @param {string} query - WHERE clause query
    * @param {string} [folder] - Folder path. Must be in format of
@@ -156,7 +149,6 @@ class CustomUtils extends customJS.Config.constructor {
 
   /**
    * Renders tasks in current file according to task status set in Config
-   *
    * @param {object} dv - DataviewAPI
    */
   renderCurrentTasks(dv) {
@@ -178,7 +170,6 @@ class CustomUtils extends customJS.Config.constructor {
 
   /**
    * Renders To Do tasks in current folder
-   *
    * @param {object} dv - DataviewAPI
    */
   todoTasks(dv) {
@@ -208,7 +199,6 @@ class CustomUtils extends customJS.Config.constructor {
       // NOTE: limit global tasks per page type to 3
       let taskResults = this.getTasks(dv, query, folders[folder], 3);
       if (taskResults.length) {
-        // dv.header(3, folder)
         dv.taskList(taskResults);
       }
     }
@@ -232,7 +222,7 @@ class CustomUtils extends customJS.Config.constructor {
    */
   timeSpent(dv) {
     let firstFile = dv.pages().file.sort((t) => t.ctime)[0];
-    // NOTE: moment.js is inaccurate, hence using raw date manipulation
+    // NOTE: dv date uses Luxon
     let totalDays = Math.ceil(
       dv.date("now").diff(firstFile.ctime, "days").toObject().days
     );
