@@ -208,7 +208,11 @@ class CustomUtils extends customJS.Config.constructor {
    * @returns Number of tasks fully completed
    */
   completedTasks(dv) {
-    let taskResults = this.getTasks(dv, "t => t.fullyCompleted", '!"data"');
+    let taskResults = this.getTasks(
+      dv,
+      "t => t.fullyCompleted",
+      `!"${this.EXCLUDED_FOLDER}"`
+    );
     return taskResults.length;
   }
 
@@ -220,12 +224,11 @@ class CustomUtils extends customJS.Config.constructor {
    */
   timeSpent(dv) {
     let firstFile = dv.pages().file.sort((t) => t.ctime)[0];
-    // NOTE: dv date uses Luxon
+    // NOTE: dv uses Luxon
     let totalDays = Math.ceil(
       dv.date("now").diff(firstFile.ctime, "days").toObject().days
     );
-    // exclude data folder
-    let allFiles = dv.pages('!"data"').file;
+    let allFiles = dv.pages(`!"${this.EXCLUDED_FOLDER}"`).file;
     let totalFiles = allFiles.length;
     let totalTasks = allFiles.tasks.length;
 
@@ -241,7 +244,7 @@ class CustomUtils extends customJS.Config.constructor {
   recentlyModified(dv) {
     dv.list(
       dv
-        .pages('!"data"')
+        .pages(`!"${this.EXCLUDED_FOLDER}"`)
         .sort((p) => p.file.mtime, "desc")
         .limit(5).file.link
     );

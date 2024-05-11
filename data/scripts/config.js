@@ -40,6 +40,13 @@ class Config {
     Object.entries(this.FOLDERS).map(([key, val]) => [val, key])
   );
 
+  
+  /**
+   * Non-user folders
+   * @type {string}
+   */
+  EXCLUDED_FOLDER = "data/" 
+
   /**
    * Page status to header text binding
    * @type {Object.<string, string>}

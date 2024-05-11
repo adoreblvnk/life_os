@@ -21,7 +21,7 @@
   - [Installation](#installation)
 - [Usage](#usage)
   - [Documentation](#documentation)
-    - [Life OS](#life-os)
+    - [Homepage](#homepage)
     - [Quick Notes](#quick-notes)
     - [Journal](#journal)
     - [Tasks](#tasks)
@@ -49,17 +49,15 @@ Created in Obsidian, packaged as a Obsidian vault template.
 
 All demo files are stored in `data/demo` folder. To interact with the demo vault, use the script `data/demo/demo.sh`.
 
-Run demo:
-
 ```bash
 ./data/demo/demo.sh
 ```
 
-Uninstall (moves demo files back to demo folder):
+By default, the script moves demo files into the appropriate folders.
 
-```bash
-./data/demo/demo.sh uninstall
-```
+Options:
+
+- `-u`, `--uninstall`: Uninstall (moves demo files back to demo folder) 
 
 ## Getting Started
 
@@ -69,18 +67,36 @@ Uninstall (moves demo files back to demo folder):
 
 ### Installation
 
-- [Download](https://github.com/adoreblvnk/life_os/archive/refs/tags/v0.1.0.zip) / Clone repository (for latest updates).
+- Download [latest release](https://github.com/adoreblvnk/life_os/releases) / Clone repository (for latest updates).
 - Obsidian > Open folder as vault > Trust author and enable plugins
 
 ## Usage
 
 ### Documentation
 
-#### Life OS
+#### Homepage
+
+**Task Dashboard**
+
+![](./data/img/homepage_1.png)
+
+**Pages & Stats**
+
+![](./data/img/homepage_2.png)
 
 #### Quick Notes
 
+![](./data/img/quick_notes_dashboard.png)
+
 #### Journal
+
+**Journal Dashboard**
+
+![](./data/img/journal_dashboard.png)
+
+**Journal Page**
+
+![](./data/img/journal_pg.png)
 
 #### Tasks
 
@@ -88,9 +104,29 @@ Uninstall (moves demo files back to demo folder):
 
 #### Projects
 
+**Projects Dashboard**
+
+![](./data/img/projects_dashboard.png)
+
+**Project Page**
+
+![](./data/img/project_pg_1_w_prop.png)
+
+![](./data/img/project_pg_2.png)
+
+![](./data/img/project_pg_3.png)
+
 #### Learning
 
 #### Writings
+
+**Writings Dashboard**
+
+![](./data/img/writings_dashboard.png)
+
+**Writings Page**
+
+![](./data/img/writings_pg.png)
 
 ### Online sync to GitHub via [Obsidian Git](https://publish.obsidian.md/git-doc/Getting+Started#Start%20with%20existing%20remote%20repository)
 
@@ -120,7 +156,7 @@ Prior to this, you should've cloned / downloaded Life OS. Ensure that the `.git`
 
 ### Bugs
 
-- Javascript not rendering.
+- Javascript not rendering occasionally.
   - ```
     TypeError: Cannot read properties of undefined (reading 'file')
     ```
