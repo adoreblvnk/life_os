@@ -6,7 +6,7 @@ class Config {
    * List of ordered dashboard pages
    * @type {Array.<string>}
    */
-  dashboards = [
+  DASHBOARDS = [
     "Life_OS",
     "Quick_Notes",
     "Journal",
@@ -21,7 +21,7 @@ class Config {
    * Dashboard to folder path binding
    * @type {Object.<string, string>}
    */
-  folders = {
+  FOLDERS = {
     Quick_Notes: '"pages/0_quick_notes"',
     Journal: '"pages/1_journal"',
     Tasks: '"pages/2_tasks"',
@@ -34,17 +34,17 @@ class Config {
   /**
    * Folder path to dashboard binding
    * @type {Object.<string, string>}
-   * @see {@link folders}
+   * @see {@link FOLDERS}
    */
-  invertFolders = Object.fromEntries(
-    Object.entries(this.folders).map(([key, val]) => [val, key])
+  INVERT_FOLDERS = Object.fromEntries(
+    Object.entries(this.FOLDERS).map(([key, val]) => [val, key])
   );
 
   /**
    * Page status to header text binding
    * @type {Object.<string, string>}
    */
-  pageStatus = {
+  PAGE_STATUS = {
     backlog: "🗃️ Backlog",
     "in-progress": "▶️ In Progress",
     completed: "✅ Done",
@@ -57,7 +57,7 @@ class Config {
    * Dataview query
    * @type {Object.<string, Object.<string, Object.<string, string>>>}
    */
-  pageTaskStatuses = {
+  PAGE_TASK_STATUSES = {
     ToDo: {
       header: "🔄 To Do",
       query: "t => !t.checked",

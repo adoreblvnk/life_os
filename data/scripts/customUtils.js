@@ -12,7 +12,7 @@ class CustomUtils extends customJS.Config.constructor {
    */
   navbarMain(dv) {
     // get list of dashboard pages from Config
-    let dashboards = this.dashboards;
+    let dashboards = this.DASHBOARDS;
     let navbar = "";
     for (let i = 0; i < dashboards.length - 1; i++) {
       let pg = dashboards[i];
@@ -54,7 +54,7 @@ class CustomUtils extends customJS.Config.constructor {
    */
   listCurrentPages(dv, status) {
     // render page status header text
-    dv.header(2, this.pageStatus[status]);
+    dv.header(2, this.PAGE_STATUS[status]);
     // exclude dashboard file, search pages with queried status, then sort by
     // most to least recently accessed
     let pages = dv
@@ -91,7 +91,7 @@ class CustomUtils extends customJS.Config.constructor {
    */
   listFirstNote(dv, dashboard = "Quick_Notes") {
     let pages = dv
-      .pages(`${this.folders[dashboard]}`)
+      .pages(`${this.FOLDERS[dashboard]}`)
       .where((p) => p.file.name != dashboard)
       .sort((p) => p.file.mtime, "desc")
       .limit(1);
@@ -112,7 +112,7 @@ class CustomUtils extends customJS.Config.constructor {
     // oldest
     dv.list(
       dv
-        .pages(this.folders.Journal)
+        .pages(this.FOLDERS.Journal)
         .where(
           (p) =>
             !["Journal", moment().format("YYYY-MM-DD")].includes(p.file.name)
@@ -153,11 +153,10 @@ class CustomUtils extends customJS.Config.constructor {
    */
   renderCurrentTasks(dv) {
     // get page type from current page frontmatter
-    let taskStatuses = this.pageTaskStatuses[dv.current().pageType];
+    let taskStatuses = this.PAGE_TASK_STATUSES[dv.current().pageType];
     // NOTE: `status` is not equivalent to item status in
     // https://blacksmithgu.github.io/obsidian-dataview/annotation/metadata-tasks/
     for (let status in taskStatuses) {
-      // render header text from Config
       dv.header(3, taskStatuses[status].header);
       let taskResults = this.getTasks(dv, taskStatuses[status].query);
       if (taskResults.length > 0) {
@@ -173,7 +172,7 @@ class CustomUtils extends customJS.Config.constructor {
    * @param {object} dv - DataviewAPI
    */
   todoTasks(dv) {
-    let todo = this.pageTaskStatuses.ToDo;
+    let todo = this.PAGE_TASK_STATUSES.ToDo;
     // render header text from Config
     dv.header(3, todo.header);
     let taskResults = this.getTasks(
@@ -194,10 +193,9 @@ class CustomUtils extends customJS.Config.constructor {
    * @param {string} query WHERE clause query
    */
   renderGlobalTasks(dv, query) {
-    let folders = this.folders;
-    for (let folder in folders) {
+    for (let folder in this.FOLDERS) {
       // NOTE: limit global tasks per page type to 3
-      let taskResults = this.getTasks(dv, query, folders[folder], 3);
+      let taskResults = this.getTasks(dv, query, this.FOLDERS[folder], 3);
       if (taskResults.length) {
         dv.taskList(taskResults);
       }
