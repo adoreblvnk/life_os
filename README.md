@@ -78,13 +78,13 @@ Options:
 
 **Task Dashboard**
 
-![](./data/img/homepage_1.png)
+![](./data/demo/homepage_1.png)
 
 The Task dashboard collates all uncompleted tasks in Life OS. Add tasks from any page.
 
 **Pages & Stats**
 
-![](./data/img/homepage_2.png)
+![](./data/demo/homepage_2.png)
 
 Pages lists all dashboards in Life OS, which can also be accessed via the navbar. Quick Notes embeds the most recently modified note on the homepage as well.
 
@@ -94,7 +94,7 @@ Stats shows selected metadata from Dataview.
 
 **Quick Notes Dashboard**
 
-![](./data/img/quick_notes_dashboard.png)
+![](./data/demo/quick_notes_dashboard.png)
 
 Quick Notes dashboard lists all quick notes. All created notes show the embedded note & the page link. Generally, keep quick notes short as long note embeds will hinder accessibility & readability in the dashboard.
 
@@ -102,7 +102,7 @@ Quick Notes dashboard lists all quick notes. All created notes show the embedded
 
 **Journal Dashboard**
 
-![](./data/img/journal_dashboard.png)
+![](./data/demo/journal_dashboard.png)
 
 The To Do section lists all uncompleted tasks sorted by recency.
 
@@ -110,7 +110,7 @@ To open Today's Journal, click "Today's Journal" on the Journal dashboard or "Da
 
 **Journal Page**
 
-![](./data/img/journal_pg.png)
+![](./data/demo/journal_pg.png)
 
 Each Journal page has an additional navbar link to yesterday & tomorrow. Next, daily tasks are stored here.
 
@@ -126,7 +126,7 @@ Each Journal page has an additional navbar link to yesterday & tomorrow. Next, d
 
 **Projects Dashboard**
 
-![](./data/img/projects_dashboard.png)
+![](./data/demo/projects_dashboard.png)
 
 The To Do section lists all uncompleted tasks across all projects sorted by recency.
 
@@ -143,11 +143,11 @@ For Projects, a pseudo [Kanban Board](https://www.atlassian.com/agile/kanban/boa
 
 **Project Page**
 
-![](./data/img/project_pg_1_w_prop.png)
+![](./data/demo/project_pg_1_w_prop.png)
 
-![](./data/img/project_pg_2.png)
+![](./data/demo/project_pg_2.png)
 
-![](./data/img/project_pg_3.png)
+![](./data/demo/project_pg_3.png)
 
 Within the Description section, note that the timebox starting date is automatically filled up.
 
@@ -172,11 +172,11 @@ Adding emojis is easiest done with Tasks' [auto-suggest menu](https://publish.ob
 
 **Writings Dashboard**
 
-![](./data/img/writings_dashboard.png)
+![](./data/demo/writings_dashboard.png)
 
 **Writings Page**
 
-![](./data/img/writings_pg.png)
+![](./data/demo/writings_pg.png)
 
 The Writings page is meant for long-form writings & highly unopinionated, hence only a navbar is included in the templated.
 
