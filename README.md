@@ -80,13 +80,23 @@ Options:
 
 ![](./data/img/homepage_1.png)
 
+The Task dashboard collates all uncompleted tasks in Life OS. Add tasks from any page.
+
 **Pages & Stats**
 
 ![](./data/img/homepage_2.png)
 
+Pages lists all dashboards in Life OS, which can also be accessed via the navbar. Quick Notes embeds the most recently modified note on the homepage as well.
+
+Stats shows selected metadata from Dataview.
+
 #### Quick Notes
 
+**Quick Notes Dashboard**
+
 ![](./data/img/quick_notes_dashboard.png)
+
+Quick Notes dashboard lists all quick notes. All created notes show the embedded note & the page link. Generally, keep quick notes short as long note embeds will hinder accessibility & readability in the dashboard.
 
 #### Journal
 
@@ -94,19 +104,42 @@ Options:
 
 ![](./data/img/journal_dashboard.png)
 
+The To Do section lists all uncompleted tasks sorted by recency.
+
+To open Today's Journal, click "Today's Journal" on the Journal dashboard or "Daily notes: Open today's daily note" via Command palette. Past journals are stored from newest to oldest.
+
 **Journal Page**
 
 ![](./data/img/journal_pg.png)
 
+Each Journal page has an additional navbar link to yesterday & tomorrow. Next, daily tasks are stored here.
+
 #### Tasks
 
+*See [Projects](#projects)*
+
 #### Life Stages
+
+*See [Projects](#projects)*
 
 #### Projects
 
 **Projects Dashboard**
 
 ![](./data/img/projects_dashboard.png)
+
+The To Do section lists all uncompleted tasks across all projects sorted by recency.
+
+Next, projects are sorted according to their status. To modify a page status, edit the frontmatter yaml via "Properties view: Show file properties" via Command palette from the project page.
+
+For Projects, a pseudo [Kanban Board](https://www.atlassian.com/agile/kanban/boards) style is adopted, hence pages have 4 statuses:
+
+- Backlog: For projects not yet started
+- In Progress: For projects started
+- Done: For completed projects
+- Cancelled: For projects formerly "In Progress" but ultimately did not complete
+
+*NOTE: If you have come here from other page categories, note that other page categories may have **different** page statuses, hence this is a non-exhaustive list of page statuses, but the overall structure remains similar.*
 
 **Project Page**
 
@@ -116,7 +149,24 @@ Options:
 
 ![](./data/img/project_pg_3.png)
 
+Within the Description section, note that the timebox starting date is automatically filled up.
+
+The Project Tasks section is a mini dashboard of all project tasks. Add tasks via the "Add Task" navlink, where "Add Task" is located at the bottom of the page.
+
+Task statuses, what they mean, & how to add them:
+
+- Backlog: Normal task with text
+- In Progress: Tasks with a start date symbol (🛫). It's not necessary to add a start date.
+- Done: Tasks completed (Markdown `- [x]`)
+- Cancelled: Tasks with hyphen symbol between task list square brackets (Markdown `- [-]`)
+
+Adding emojis is easiest done with Tasks' [auto-suggest menu](https://publish.obsidian.md/tasks/Editing/Auto-Suggest) already included. Life OS only uses start date (🛫), high priority (⏫), & done (✅) (enabled by default when a task is completed).
+
+*NOTE: Do **NOT** confuse task status with project status.*
+
 #### Learning
+
+*See [Projects](#projects)*
 
 #### Writings
 
@@ -128,9 +178,11 @@ Options:
 
 ![](./data/img/writings_pg.png)
 
+The Writings page is meant for long-form writings & highly unopinionated, hence only a navbar is included in the templated.
+
 ### Online sync to GitHub via [Obsidian Git](https://publish.obsidian.md/git-doc/Getting+Started#Start%20with%20existing%20remote%20repository)
 
-Prior to this, you should've cloned / downloaded Life OS. Ensure that the `.git` folder exists.
+Prior to this, users should've cloned / downloaded Life OS. Ensure that the `.git` folder exists.
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository#creating-a-new-repository-from-the-web-ui) your personal GitHub repository.
 
