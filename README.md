@@ -139,7 +139,7 @@ For Projects, a pseudo [Kanban Board](https://www.atlassian.com/agile/kanban/boa
 - Done: For completed projects
 - Cancelled: For projects formerly "In Progress" but ultimately did not complete
 
-*NOTE: If you have come here from other page categories, note that other page categories may have **different** page statuses, hence this is a non-exhaustive list of page statuses, but the overall structure remains similar.*
+*NOTE: If you have come here from other page types, note that other page types may have **different** page statuses, hence this is a non-exhaustive list of page statuses, but the overall structure remains similar.*
 
 **Project Page**
 
