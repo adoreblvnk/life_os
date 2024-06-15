@@ -191,6 +191,8 @@ Prior to this, users should've cloned / downloaded Life OS. Ensure that the `.gi
 1. Follow the steps in Obsidian Git's [Authentication](https://publish.obsidian.md/git-doc/Authentication).
 2. Link your GitHub repo via [changing the remote repository's URL](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url) or via Obsidian's Command palette *(see [Android / iOS](#android--ios))*.
 
+*NOTE: For Linux installation via Flatpak, only SSH is supported. The other alternative is to authenticate with the PAT in the URL (eg. `https://<PAT>@github.com/adoreblvnk/life_os`), which admittedly is insecure.*
+
 #### Android / iOS
 
 1. Create a [Personal Access Token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) with minimal permissions of "Read access to metadata" & "Read and Write access to administration, code, commit statuses, and pull requests".
