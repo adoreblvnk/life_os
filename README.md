@@ -205,8 +205,8 @@ Prior to this, users should've cloned / downloaded Life OS. Ensure that the `.gi
 #### Pushing / Pulling (Syncing)
 
 1. To push local changes to remote, use Obsidian's Command palette > Git: Push.
-2. *NOTE: Changes are auto pulled by default when Obsidian launches.*
-  - To pull new changes from remote, use Obsidian's Command palette > Git: Pull.
+2. To pull new changes from remote, use Obsidian's Command palette > Git: Pull.
+   - *NOTE: Changes are auto pulled by default when Obsidian launches.*
 
 ### Bugs
 
