@@ -178,7 +178,7 @@ Adding emojis is easiest done with Tasks' [auto-suggest menu](https://publish.ob
 
 ![](./data/demo/writings_pg.png)
 
-The Writings page is meant for long-form writings & highly unopinionated, hence only a navbar is included in the templated.
+The Writings page is meant for long-form writings & highly unopinionated, hence only a navbar is included in the template.
 
 ### Online sync to GitHub via [Obsidian Git](https://publish.obsidian.md/git-doc/Getting+Started#Start%20with%20existing%20remote%20repository)
 
