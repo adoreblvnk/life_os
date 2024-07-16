@@ -221,6 +221,7 @@ Prior to this, users should've cloned / downloaded Life OS. Ensure that the `.gi
 - [ ] Clean up code in `CustomUtils`.
 - [ ] Implement dashboard banners for aesthetics.
 - [ ] Data visualisation charts for metadata (eg done tasks).
+- [ ] Auto-update Life OS via script.
 
 ## License
 
