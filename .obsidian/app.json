@@ -4,8 +4,8 @@
   "propertiesInDocument": "hidden",
   "attachmentFolderPath": "data/img",
   "mobileToolbarCommands": [
-    "editor:indent-list",
     "editor:unindent-list",
+    "editor:indent-list",
     "editor:move-caret-left",
     "editor:move-caret-up",
     "editor:move-caret-down",
