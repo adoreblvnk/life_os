@@ -24,11 +24,9 @@
     - [Homepage](#homepage)
     - [Quick Notes](#quick-notes)
     - [Journal](#journal)
-    - [Tasks](#tasks)
-    - [Life Stages](#life-stages)
-    - [Projects](#projects)
-    - [Learning](#learning)
+    - [Tasks / Life Stages / Projects / Learning](#tasks--life-stages--projects--learning)
     - [Writings](#writings)
+  - [`life_os` script for Linux \& MacOS](#life_os-script-for-linux--macos)
   - [Online sync to GitHub via Obsidian Git](#online-sync-to-github-via-obsidian-git)
     - [Linux / macOS / Windows](#linux--macos--windows)
     - [Android / iOS](#android--ios)
@@ -114,15 +112,7 @@ To open Today's Journal, click "Today's Journal" on the Journal dashboard or "Da
 
 Each Journal page has an additional navbar link to yesterday & tomorrow. Next, daily tasks are stored here.
 
-#### Tasks
-
-*See [Projects](#projects)*
-
-#### Life Stages
-
-*See [Projects](#projects)*
-
-#### Projects
+#### Tasks / Life Stages / Projects / Learning
 
 **Projects Dashboard**
 
@@ -164,10 +154,6 @@ Adding emojis is easiest done with Tasks' [auto-suggest menu](https://publish.ob
 
 *NOTE: Do **NOT** confuse task status with project status.*
 
-#### Learning
-
-*See [Projects](#projects)*
-
 #### Writings
 
 **Writings Dashboard**
@@ -180,6 +166,10 @@ Adding emojis is easiest done with Tasks' [auto-suggest menu](https://publish.ob
 
 The Writings page is meant for long-form writings & highly unopinionated, hence only a navbar is included in the template.
 
+### `life_os` script for Linux & MacOS
+
+*NOTE: Currently in alpha stages. Run `life_os -h` for help.*
+
 ### Online sync to GitHub via [Obsidian Git](https://publish.obsidian.md/git-doc/Getting+Started#Start%20with%20existing%20remote%20repository)
 
 Prior to this, users should've cloned / downloaded Life OS. Ensure that the `.git` folder exists.
@@ -191,7 +181,7 @@ Prior to this, users should've cloned / downloaded Life OS. Ensure that the `.gi
 1. Follow the steps in Obsidian Git's [Authentication](https://publish.obsidian.md/git-doc/Authentication).
 2. Link your GitHub repo via [changing the remote repository's URL](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url) or via Obsidian's Command palette *(see [Android / iOS](#android--ios))*.
 
-*NOTE: For Linux installation via Flatpak, only SSH is supported. The other alternative is to authenticate with the PAT in the URL (eg. `https://<PAT>@github.com/adoreblvnk/life_os`), which admittedly is insecure.*
+*NOTE: For Linux installation via Flatpak, only SSH is supported. The other alternative is to authenticate with the PAT in the URL (eg. `https://<PAT>@github.com/adoreblvnk/life_os`), which is insecure.*
 
 #### Android / iOS
 
@@ -220,8 +210,8 @@ Prior to this, users should've cloned / downloaded Life OS. Ensure that the `.gi
 
 - [ ] Clean up code in `CustomUtils`.
 - [ ] Implement dashboard banners for aesthetics.
-- [ ] Data visualisation charts for metadata (eg done tasks).
 - [ ] Auto-update Life OS via script.
+  - [ ] Fix merge strategies.
 
 ## License
 

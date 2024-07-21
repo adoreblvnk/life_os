@@ -95,6 +95,8 @@ update() {
   else
     _info_msg "Rebasing $PERSONAL branch onto $latest_ver of Life OS"
     git rebase --onto "$latest_ver" master "$PERSONAL"
+    _info_msg "Updating $PERSONAL remote"
+    git push -f
     _success_msg "Updated to $latest_ver"
   fi
 }
