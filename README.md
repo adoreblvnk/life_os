@@ -189,7 +189,7 @@ Prior to this, users should've cloned / downloaded Life OS. Ensure that the `.gi
 2. In Obsidian settings, go to Community Plugins > Git > Authentication/Commit Author.
 3. Enter your username, PAT, author name, & author email.
    - *NOTE: Enter your author name & author email as per your GitHub username & email.*
-   - *TIP: Use GitHub's [noreply](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address?platform=windows#about-commit-email-addresses) email address for privacy.*
+   - *TIP: Use GitHub's [noreply](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address#about-commit-email-addresses) email address for privacy.*
 4. Open Obsidian's Command palette > Git: Edit remotes > origin. Enter the URL of the GitHub repo you created.
 
 #### Pushing / Pulling (Syncing)
