@@ -2,7 +2,6 @@
 aliases: ⏳ Life Stages
 obsidianUIMode: preview
 ---
-
 ```dataviewjs
 const { CustomUtils } = customJS;
 

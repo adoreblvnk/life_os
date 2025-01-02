@@ -2,7 +2,6 @@
 aliases: ✒️ Writings
 obsidianUIMode: preview
 ---
-
 ```dataviewjs
 const { CustomUtils } = customJS;
 

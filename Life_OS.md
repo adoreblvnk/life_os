@@ -2,15 +2,11 @@
 aliases: Life OS
 obsidianUIMode: preview
 ---
-
 ```dataviewjs
 await dv.view("data/views/navbar");
 ```
-
 # 📌 Task Dashboard
-
 <!-- Task Dashboard: Each category is ordered by importance and does not show tasks shown in the previous category. -->
-
 ```dataviewjs
 const { Config, CustomUtils } = customJS;
 
@@ -42,13 +38,9 @@ CustomUtils.renderGlobalTasks(
   && (!t.due || t.due > moment().add(7, "d"))`
 );
 ```
-
 ---
-
 # 📄 Pages
-
 <!-- Pages: Personal items. -->
-
 ```dataviewjs
 const { CustomUtils } = customJS;
 
@@ -72,11 +64,8 @@ dv.header(2, `[[${learning.name}|${learning.aliases[0]}]]`);
 let writings = dv.page("Writings").file;
 dv.header(2, `[[${writings.name}|${writings.aliases[0]}]]`);
 ```
-
 ---
-
 # 〽️ Stats
-
 ```dataviewjs
 const { CustomUtils } = customJS;
 
@@ -89,6 +78,5 @@ dv.paragraph(`Completed Tasks: ${CustomUtils.completedTasks(dv)}`)
 ```
 
 # 🔗 Links
-
 - Twitter: [adore_blvnk](https://twitter.com/adore_blvnk)
 - GitHub: [adoreblvnk](https://github.com/adoreblvnk)
