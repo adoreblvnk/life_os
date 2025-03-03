@@ -12,19 +12,17 @@ await dv.view("data/views/navbar");
 ### 🔗 Links
 - 
 ---
-## 📝 Life Stage Tasks
-```dataviewjs
-await dv.view("data/views/currentTasks");
-```
-> [[#📝 Tasks|Add Task]]
----
-## 🪵 Resources
-- 
-## 🪞 Reflections
-- 
 ## 📝 Tasks
 ```dataviewjs
 await dv.view("data/views/tips", { tip: "addTask" });
 ```
 - [ ] 
-> [[#📝 Life Stage Tasks|Back to Tasks]]
+## 🪵 Resources
+- 
+## 🪞 Reflections
+- 
+---
+## 📝 Life Stage Tasks
+```dataviewjs
+await dv.view("data/views/currentTasks");
+```

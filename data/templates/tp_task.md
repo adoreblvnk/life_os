@@ -9,17 +9,17 @@ await dv.view("data/views/navbar");
 <% tp.file.cursor() %>
 <!-- Timebox: <start_date> - <end_date> -->
 **⏳ Timebox**: <% tp.date.now("D MMM YYYY") %> - 
-## 🔄 Sub-Tasks
-```dataviewjs
-await dv.view("data/views/currentTasks");
-```
-> [[#📝 Tasks|Add Task]]
+
 ---
-## 🪵 Resources
-- 
 ## 📝 Tasks
 ```dataviewjs
 await dv.view("data/views/tips", { tip: "addTask" });
 ```
 - [ ] 
-> [[#🔄 Sub-Tasks|Back to Sub-Tasks]]
+## 🪵 Resources
+- 
+---
+## 🔄 Sub-Tasks
+```dataviewjs
+await dv.view("data/views/currentTasks");
+```

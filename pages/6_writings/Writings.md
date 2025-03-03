@@ -1,5 +1,5 @@
 ---
-aliases: ✒️ Writings
+aliases: 🖊️ Writings
 obsidianUIMode: preview
 ---
 ```dataviewjs

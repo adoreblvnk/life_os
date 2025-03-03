@@ -1,10 +1,10 @@
 [
   "dataview",
   "customjs",
-  "obsidian-tasks-plugin",
   "templater-obsidian",
   "homepage",
   "obsidian-view-mode-by-frontmatter",
   "obsidian-emoji-toolbar",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-tasks-plugin"
 ]

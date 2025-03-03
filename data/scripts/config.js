@@ -7,7 +7,6 @@ class Config {
    * @type {Array.<string>}
    */
   DASHBOARDS = [
-    "Life_OS",
     "Quick_Notes",
     "Journal",
     "Tasks",

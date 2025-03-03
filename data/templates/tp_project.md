@@ -12,21 +12,17 @@ await dv.view("data/views/navbar");
 ### 🔗 Links
 - 
 ---
-```dataviewjs
-await dv.view("data/views/currentTasks");
-```
-> [[#📝 Tasks|Add Task]]
----
-## 🪵 Resources
-- 
-
-## 📦 Idea Box
-- 
-
 ## 📝 Tasks
 ```dataviewjs
 await dv.view("data/views/tips", { tip: "addTask" });
 ```
 - [ ] 
-
-> [[#📝 Project Tasks|Back to Project Tasks]]
+## 🪵 Resources
+- 
+## 📦 Idea Box
+- 
+---
+## 📝 Project Tasks
+```dataviewjs
+await dv.view("data/views/currentTasks");
+```

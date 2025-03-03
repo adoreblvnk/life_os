@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 🗒️ Quick Notes
+aliases: 🗒️ Quick Notes
 obsidianUIMode: preview
 ---
 ```dataviewjs

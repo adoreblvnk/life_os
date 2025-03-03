@@ -13,19 +13,23 @@ class CustomUtils extends customJS.Config.constructor {
   navbarMain(dv) {
     // get list of dashboard pages from Config
     let dashboards = this.DASHBOARDS;
-    let navbar = "";
+    let navbar = "**[[Life_OS|Life OS]]** | ";
     for (let i = 0; i < dashboards.length - 1; i++) {
       let pg = dashboards[i];
-      // bold item if current page
+      // bold item if current page, else use emoji (1st element) to represent dashboard
       if (dv.current().file.name == pg) {
         navbar += `**[[${pg}|${dv.page(pg).file.aliases[0]}]]** | `;
       } else {
-        navbar += `[[${pg}|${dv.page(pg).file.aliases[0]}]] | `;
+        navbar += `[[${pg}|${Array.from(dv.page(pg).file.aliases[0])[0]}]] | `;
       }
     }
     // add last item
     let lastPg = dashboards.at(-1);
-    navbar += `[[${lastPg}|${dv.page(lastPg).file.aliases[0]}]]`;
+    if (dv.current().file.name == lastPg) {
+      navbar += `**[[${lastPg}|${dv.page(lastPg).file.aliases[0]}]]**`;
+    } else {
+      navbar += `[[${lastPg}|${Array.from(dv.page(lastPg).file.aliases[0])[0]}]]`;
+    }
     dv.paragraph(navbar);
   }
 
