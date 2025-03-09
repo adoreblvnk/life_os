@@ -16,8 +16,8 @@ class CustomUtils extends customJS.Config.constructor {
     let navbar = "**[[Life_OS|Life OS]]** | ";
     for (let i = 0; i < dashboards.length - 1; i++) {
       let pg = dashboards[i];
-      // bold item if current page, else use emoji (1st element) to represent dashboard
-      if (dv.current().file.name == pg) {
+      // list dashboard name if current page type, else use emoji (1st element) to represent dashboard
+      if (dv.current().file.name == pg || dv.current().pageType == pg) {
         navbar += `**[[${pg}|${dv.page(pg).file.aliases[0]}]]** | `;
       } else {
         navbar += `[[${pg}|${Array.from(dv.page(pg).file.aliases[0])[0]}]] | `;
