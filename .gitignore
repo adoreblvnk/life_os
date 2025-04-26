@@ -2,8 +2,12 @@
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 
-# unecessary Obsidian files
+# extra Obsidian files
 .obsidian/hotkeys.json
+
+# Obsidian Git plugin
+# Android bug https://github.com/Vinzent03/obsidian-git/issues/903
+.obsidian/plugins/obsidian-git/obsidian_askpass.sh
 
 # trash
 .trash/
