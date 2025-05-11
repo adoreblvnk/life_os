@@ -2,7 +2,8 @@
 pageType: Journal
 ---
 ```dataviewjs
-await dv.view("data/views/navbar");
+const { CustomUtils } = await cJS();
+CustomUtils.navbarMain(dv);
 ```
 ## 📝 Tasks
 - [ ] <% tp.file.cursor() %>
