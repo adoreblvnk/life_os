@@ -3,24 +3,10 @@
  */
 class Config {
   /**
-   * List of ordered dashboard pages
-   * @type {Array.<string>}
-   */
-  DASHBOARDS = [
-    "Quick_Notes",
-    "Journal",
-    "Tasks",
-    "Life_Stages",
-    "Projects",
-    "Learning",
-    "Writings",
-  ];
-
-  /**
    * Dashboard to folder path binding
    * @type {Object.<string, string>}
    */
-  FOLDERS = {
+  DASHBOARDS = {
     Quick_Notes: '"pages/0_quick_notes"',
     Journal: '"pages/1_journal"',
     Tasks: '"pages/2_tasks"',
@@ -31,20 +17,10 @@ class Config {
   };
 
   /**
-   * Folder path to dashboard binding
-   * @type {Object.<string, string>}
-   * @see {@link FOLDERS}
-   */
-  INVERT_FOLDERS = Object.fromEntries(
-    Object.entries(this.FOLDERS).map(([key, val]) => [val, key])
-  );
-
-  
-  /**
    * Non-user folders
    * @type {string}
    */
-  EXCLUDED_FOLDER = "data/" 
+  EXCLUDED_FOLDER = "data/";
 
   /**
    * Page status to header text binding
@@ -59,74 +35,63 @@ class Config {
   };
 
   /**
-   * For each page type, list all task statuses with their header text &
-   * Dataview query
-   * @type {Object.<string, Object.<string, Object.<string, string>>>}
+   * Individual task status
+   * @type {Object.<string, Object.<string, string>>}
    */
-  PAGE_TASK_STATUSES = {
-    ToDo: {
+  TASK_STATUS = {
+    todo: {
       header: "🔄 To Do",
       query: "t => !t.checked",
     },
+    backlog: {
+      header: "🗃️ Backlog",
+      query: "t => !t.text.includes('🛫') && !t.checked",
+    },
+    inProgress: {
+      header: "▶️ In Progress",
+      query: "t => t.text.includes('🛫') && !t.checked",
+    },
+    inProgressNB: {
+      header: "▶️ In Progress",
+      query: "t => !t.checked",
+    },
+    completed: {
+      header: "✅ Done",
+      query: "t => t.fullyCompleted",
+    },
+    cancelled: {
+      header: "❌ Cancelled",
+      query: "t => t.status == '-'",
+    },
+  };
+
+  /**
+   * For each page type, list all task statuses with their header text &
+   * Dataview query
+   * @type {Object.<string, Object.<string, Object<string, string>>>}
+   */
+  PAGE_TASK_STATUS = {
     Tasks: {
-      inProgress: {
-        header: "▶️ In Progress",
-        query: "t => !t.checked",
-      },
-      completed: {
-        header: "✅ Done",
-        query: "t => t.fullyCompleted",
-      },
+      inProgress: this.TASK_STATUS.inProgressNB,
+      backlog: this.TASK_STATUS.backlog,
+      completed: this.TASK_STATUS.completed,
     },
     Life_Stages: {
-      backlog: {
-        header: "🗃️ Backlog",
-        query: "t => !t.text.includes('🛫') && !t.checked",
-      },
-      inProgress: {
-        header: "▶️ In Progress",
-        query: "t => t.text.includes('🛫') && !t.checked",
-      },
-      completed: {
-        header: "✅ Done",
-        query: "t => t.fullyCompleted",
-      },
-      cancelled: {
-        header: "❌ Cancelled",
-        query: "t => t.status == '-'",
-      },
+      backlog: this.TASK_STATUS.backlog,
+      inProgress: this.TASK_STATUS.inProgress,
+      completed: this.TASK_STATUS.completed,
+      cancelled: this.TASK_STATUS.cancelled,
     },
     Projects: {
-      backlog: {
-        header: "🗃️ Backlog",
-        query: "t => !t.text.includes('🛫') && !t.checked",
-      },
-      inProgress: {
-        header: "▶️ In Progress",
-        query: "t => t.text.includes('🛫') && !t.checked",
-      },
-      completed: {
-        header: "✅ Done",
-        query: "t => t.fullyCompleted",
-      },
-      cancelled: {
-        header: "❌ Cancelled",
-        query: "t => t.status == '-'",
-      },
+      backlog: this.TASK_STATUS.backlog,
+      inProgress: this.TASK_STATUS.inProgress,
+      completed: this.TASK_STATUS.completed,
+      cancelled: this.TASK_STATUS.cancelled,
     },
     Learning: {
-      backlog: {
-        header: "🗃️ Backlog",
-        query: "t => !t.text.includes('🛫') && !t.checked",
-      },
-      inProgress: {
-        header: "▶️ In Progress",
-        query: "t => t.text.includes('🛫') && !t.checked",
-      },
-      completed: {
-        header: "✅ Done",
-        query: "t => t.fullyCompleted",
-      },
+      backlog: this.TASK_STATUS.backlog,
+      inProgress: this.TASK_STATUS.inProgress,
+      completed: this.TASK_STATUS.completed,
     },
   };
 }
