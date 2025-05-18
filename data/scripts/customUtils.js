@@ -1,8 +1,10 @@
 /**
- * Helper functions for rendering Dataview queries
+ * Methods for rendering Dataview queries
  */
 class CustomUtils extends customJS.Config.constructor {
   // NOTE: methods that use Dataview require dv to be passed as a parameter.
+
+  // HELPER METHODS
 
   /**
    * Gets pages containing task query results in current page (default) or
@@ -24,6 +26,8 @@ class CustomUtils extends customJS.Config.constructor {
       .sort((t) => t.due ?? "")
       .limit(limit);
   }
+
+  // NAVBAR
 
   /**
    * Renders navbar for dashboard pages
@@ -56,6 +60,29 @@ class CustomUtils extends customJS.Config.constructor {
     }
   }
 
+  // PAGE LISTING
+
+  /**
+   * List pages in current folder according to page status
+   * @param {object} dv - DataviewAPI
+   * @param {string} status - Status according to frontmatter YAML in page
+   */
+  listCurrentPages(dv, status) {
+    // render page status header text
+    dv.header(2, this.PAGE_STATUS[status]);
+    // exclude dashboard file, search pages with queried status, then sort by
+    // most to least recently accessed
+    let pages = dv
+      .pages(`"${dv.current().file.folder}"`)
+      .where((p) => p.file.name != dv.current().file.name && p.status == status)
+      .sort((p) => p.file.mtime, "desc");
+    if (pages.length) {
+      dv.list(pages.file.link);
+    } else {
+      dv.paragraph("No pages to show.");
+    }
+  }
+
   /**
    * List past journals, sorted from newest to oldest TODO: refactor
    * @param {object} dv - DataviewAPI
@@ -73,6 +100,28 @@ class CustomUtils extends customJS.Config.constructor {
     );
   }
 
+  // TASK RENDERING
+
+  /**
+   * Renders tasks in current file according to task status set in Config
+   * @param {object} dv - DataviewAPI
+   */
+  renderCurrentTasks(dv) {
+    // get page type from current page frontmatter
+    let taskStatuses = this.PAGE_TASK_STATUS[dv.current().pageType];
+    // NOTE: `status` is not equivalent to item status in
+    // https://blacksmithgu.github.io/obsidian-dataview/annotation/metadata-tasks/
+    for (let status in taskStatuses) {
+      dv.header(3, taskStatuses[status].header);
+      let tResults = this.#getTasks(dv, taskStatuses[status].query);
+      if (tResults.length) {
+        dv.taskList(tResults, false);
+      } else {
+        dv.paragraph("No tasks to show.");
+      }
+    }
+  }
+
   /**
    * Renders To Do tasks in current folder
    * @param {object} dv - DataviewAPI
@@ -80,9 +129,9 @@ class CustomUtils extends customJS.Config.constructor {
   todoTasks(dv) {
     const todo = this.TASK_STATUS.todo;
     dv.header(3, todo.header); // render header text from Config
-    const taskResults = this.#getTasks(dv, todo.query, dv.current().file.folder);
-    if (taskResults.length) {
-      dv.taskList(taskResults, false);
+    const tResults = this.#getTasks(dv, todo.query, dv.current().file.folder);
+    if (tResults.length) {
+      dv.taskList(tResults, false);
     } else {
       dv.paragraph("No tasks to show.");
     }

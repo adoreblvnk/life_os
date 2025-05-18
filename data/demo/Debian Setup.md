@@ -3,7 +3,8 @@ pageType: Projects
 status: in-progress
 ---
 ```dataviewjs
-await dv.view("data/views/navbar");
+const { CustomUtils } = await cJS();
+CustomUtils.navbarMain(dv);
 ```
 ## 📄 Description
 
@@ -13,11 +14,9 @@ await dv.view("data/views/navbar");
 - 
 ---
 ## 📝 Tasks
-```dataviewjs
-await dv.view("data/views/tips", { tip: "addTask" });
-```
 - [x] dependency list 🛫 📅 2024-04-05 ✅ 2024-04-05
 - [-] clean minimal theme
+  - use Catppuccin color scheme
 - [ ] setup pkg configs 🛫 📅 2024-05-05
 	- [ ] git
 - [ ] setup security settings (ufw)
@@ -28,5 +27,6 @@ await dv.view("data/views/tips", { tip: "addTask" });
 ---
 ## 📝 Project Tasks
 ```dataviewjs
-await dv.view("data/views/currentTasks");
+const { CustomUtils } = await cJS();
+CustomUtils.renderCurrentTasks(dv);
 ```
