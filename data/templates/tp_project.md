@@ -14,9 +14,6 @@ CustomUtils.navbarMain(dv);
 - 
 ---
 ## 📝 Tasks
-```dataviewjs
-await dv.view("data/views/tips", { tip: "addTask" });
-```
 - [ ] 
 ## 🪵 Resources
 - 

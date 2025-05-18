@@ -3,7 +3,8 @@ pageType: Learning
 status: backlog # backlog, in-progress, completed, cancelled
 ---
 ```dataviewjs
-await dv.view("data/views/navbar");
+const { CustomUtils } = await cJS();
+CustomUtils.navbarMain(dv);
 ```
 ## 📄 Description
 <% tp.file.cursor() %>
@@ -13,9 +14,6 @@ await dv.view("data/views/navbar");
 - 
 ---
 ## 📝 Tasks
-```dataviewjs
-await dv.view("data/views/tips", { tip: "addTask" });
-```
 - [ ] 
 ## 🗒️ Notes
 - 
@@ -24,5 +22,6 @@ await dv.view("data/views/tips", { tip: "addTask" });
 ---
 ## 🎯 Assignments
 ```dataviewjs
-await dv.view("data/views/currentTasks");
+const { CustomUtils } = await cJS();
+CustomUtils.renderCurrentTasks(dv);
 ```

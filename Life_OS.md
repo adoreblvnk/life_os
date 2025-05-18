@@ -3,11 +3,13 @@ aliases: Life OS
 obsidianUIMode: preview
 ---
 ```dataviewjs
-await dv.view("data/views/navbar");
+const { CustomUtils } = await cJS();
+CustomUtils.navbarMain(dv);
 ```
 # 📌 Task Dashboard
 <!-- Task Dashboard: Each category is ordered by importance and does not show tasks shown in the previous category. -->
 ```dataviewjs
+// TODO: rewrite
 const { Config, CustomUtils } = customJS;
 
 // uncompleted tasks with high priority
