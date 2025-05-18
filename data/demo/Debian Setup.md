@@ -18,7 +18,7 @@ CustomUtils.navbarMain(dv);
 - [-] clean minimal theme
   - use Catppuccin color scheme
 - [ ] setup pkg configs 🛫 📅 2024-05-05
-	- [ ] git
+	- [x] git ✅ 2025-05-18
 - [ ] setup security settings (ufw)
 ## 🪵 Resources
 - 

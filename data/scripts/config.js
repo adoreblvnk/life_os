@@ -7,20 +7,20 @@ class Config {
    * @type {Object.<string, string>}
    */
   DASHBOARDS = {
-    Quick_Notes: '"pages/0_quick_notes"',
-    Journal: '"pages/1_journal"',
-    Tasks: '"pages/2_tasks"',
-    Life_Stages: '"pages/3_life_stages"',
-    Projects: '"pages/4_projects"',
-    Learning: '"pages/5_learning"',
-    Writings: '"pages/6_writings"',
+    Quick_Notes: "pages/0_quick_notes",
+    Journal: "pages/1_journal",
+    Tasks: "pages/2_tasks",
+    Life_Stages: "pages/3_life_stages",
+    Projects: "pages/4_projects",
+    Learning: "pages/5_learning",
+    Writings: "pages/6_writings",
   };
 
   /**
-   * Non-user folders
+   * Global folder
    * @type {string}
    */
-  EXCLUDED_FOLDER = "data/";
+  GLOBAL_FOLDER = "pages";
 
   /**
    * Page status to header text binding
@@ -41,27 +41,27 @@ class Config {
   TASK_STATUS = {
     todo: {
       header: "🔄 To Do",
-      query: "t => !t.checked",
+      query: "!t.checked",
     },
     backlog: {
       header: "🗃️ Backlog",
-      query: "t => !t.text.includes('🛫') && !t.checked",
+      query: "!t.text.includes('🛫') && !t.checked",
     },
     inProgress: {
       header: "▶️ In Progress",
-      query: "t => t.text.includes('🛫') && !t.checked",
+      query: "t.text.includes('🛫') && !t.checked",
     },
     inProgressNB: {
       header: "▶️ In Progress",
-      query: "t => !t.checked",
+      query: "!t.checked",
     },
     completed: {
       header: "✅ Done",
-      query: "t => t.fullyCompleted",
+      query: "t.fullyCompleted",
     },
     cancelled: {
       header: "❌ Cancelled",
-      query: "t => t.status == '-'",
+      query: "t.status == '-'",
     },
   };
 

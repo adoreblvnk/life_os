@@ -3,12 +3,9 @@ aliases: 🗒️ Quick Notes
 obsidianUIMode: preview
 ---
 ```dataviewjs
-const { CustomUtils } = customJS;
+const { CustomUtils } = await cJS();
 
-await dv.view("data/views/navbar");
+CustomUtils.navbarMain(dv);
 
-await dv.view("data/views/tips", {tip: dv.current().file.name});
-
-// Embed notes
-CustomUtils.listNotes(dv);
+CustomUtils.listNotes(dv); // embed notes
 ```
