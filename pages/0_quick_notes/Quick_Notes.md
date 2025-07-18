@@ -7,5 +7,6 @@ const { CustomUtils } = await cJS();
 
 CustomUtils.navbarMain(dv);
 
-CustomUtils.listNotes(dv); // embed notes
+// embed notes
+CustomUtils.listNotes(dv);
 ```
