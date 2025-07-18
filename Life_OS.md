@@ -13,7 +13,7 @@ const { CustomUtils } = await cJS();
 
 // uncompleted tasks with high priority
 dv.span(`> [!todo] ⏫ High Priority`)
-CustomUtils.renderGlobalTasks(dv, "t => !t.checked && t.text.includes('⏫')");
+CustomUtils.renderGlobalTasks(dv, "!t.checked && t.text.includes('⏫')");
 
 // tasks due today or overdue.
 dv.span(`> [!todo] 🔴 Due Today / Overdue`)
@@ -26,16 +26,14 @@ CustomUtils.renderGlobalTasks(
 dv.span(`> [!todo] 🟠 Due This Week`)
 CustomUtils.renderGlobalTasks(
   dv,
-  `!t.checked && !t.text.includes("⏫") && moment() <= t.due
-  && t.due <= moment().add(7, "d")`
+  `!t.checked && !t.text.includes("⏫") && moment() <= t.due && t.due <= moment().add(7, "d")`
 );
 
 // other tasks
 dv.span(`> [!todo] 🟢 Other Tasks`)
 CustomUtils.renderGlobalTasks(
   dv,
-  `!t.checked && !t.text.includes('⏫')
-  && (!t.due || t.due > moment().add(7, "d"))`
+  `!t.checked && !t.text.includes('⏫') && (!t.due || t.due > moment().add(7, "d"))`
 );
 ```
 ---
