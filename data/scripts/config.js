@@ -6,15 +6,15 @@ class Config {
    * Dashboard to folder path binding
    * @type {Object.<string, string>}
    */
-  DASHBOARDS = {
+  DASHBOARDS = Object.freeze({
     Quick_Notes: "pages/0_quick_notes",
     Journal: "pages/1_journal",
     Tasks: "pages/2_tasks",
     Life_Stages: "pages/3_life_stages",
     Projects: "pages/4_projects",
     Learning: "pages/5_learning",
-    Writings: "pages/6_writings",
-  };
+    Writings: "pages/6_writings"
+  });
 
   /**
    * Global folder
@@ -26,19 +26,19 @@ class Config {
    * Page status to header text binding
    * @type {Object.<string, string>}
    */
-  PAGE_STATUS = {
+  PAGE_STATUS = Object.freeze({
     backlog: "🗃️ Backlog",
     "in-progress": "▶️ In Progress",
     completed: "✅ Done",
     cancelled: "❌ Cancelled",
     future: "🔮 Future",
-  };
+  });
 
   /**
    * Individual task status
    * @type {Object.<string, Object.<string, string>>}
    */
-  TASK_STATUS = {
+  TASK_STATUS = Object.freeze({
     todo: {
       header: "🔄 To Do",
       query: "!t.checked",
@@ -63,14 +63,14 @@ class Config {
       header: "❌ Cancelled",
       query: "t.status == '-'",
     },
-  };
+  });
 
   /**
    * For each page type, list all task statuses with their header text &
    * Dataview query
    * @type {Object.<string, Object.<string, Object<string, string>>>}
    */
-  PAGE_TASK_STATUS = {
+  PAGE_TASK_STATUS = Object.freeze({
     Tasks: {
       inProgress: this.TASK_STATUS.inProgressNB,
       backlog: this.TASK_STATUS.backlog,
@@ -93,5 +93,5 @@ class Config {
       inProgress: this.TASK_STATUS.inProgress,
       completed: this.TASK_STATUS.completed,
     },
-  };
+  });
 }

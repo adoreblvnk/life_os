@@ -1,6 +1,7 @@
 ---
 pageType: Life_Stages
 status: future # future, in-progress, completed
+creation_date: <% tp.file.creation_date() %>
 ---
 ```dataviewjs
 const { CustomUtils } = await cJS();

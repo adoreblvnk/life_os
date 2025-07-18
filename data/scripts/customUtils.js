@@ -36,26 +36,24 @@ class CustomUtils extends customJS.Config.constructor {
    * // <page> | **<current_page>** | <page> ...
    */
   navbarMain(dv) {
-    let navbar = "**[[Life_OS|Life OS]]** | ";
+    const navbarItems = ["**[[Life_OS|Life OS]]**"];
     for (const pg in this.DASHBOARDS) {
       // list dashboard name if current page type, else use emoji (1st element) to represent dashboard
       if (dv.current().file.name == pg) {
-        navbar += `**[[${pg}|${dv.page(pg).file.aliases[0]}]]** | `;
+        navbarItems.push(`**[[${pg}|${dv.page(pg).file.aliases[0]}]]**`);
       } else {
-        navbar += `[[${pg}|${Array.from(dv.page(pg).file.aliases[0])[0]}]] | `;
+        navbarItems.push(
+          `[[${pg}|${Array.from(dv.page(pg).file.aliases[0])[0]}]]`
+        );
       }
     }
-    // remove last 3 characters (space + | + space) from navbar
-    dv.paragraph(navbar.slice(0, -3));
+    dv.paragraph(navbarItems.join(" | "));
 
     // render journal navbar if current page is a journal
     if (dv.current().pageType == "Journal") {
-      const previous = moment(dv.current().file.name)
-        .subtract(1, "d")
-        .format("YYYY-MM-DD");
-      const next = moment(dv.current().file.name)
-        .add(1, "d")
-        .format("YYYY-MM-DD");
+      const date = moment(dv.current().file.name);
+      const previous = date.clone().subtract(1, "d").format("YYYY-MM-DD");
+      const next = date.clone().add(1, "d").format("YYYY-MM-DD");
       dv.paragraph(`[[${previous}|Previous Day]] | [[${next}|Next Day]]`);
     }
   }
@@ -76,11 +74,9 @@ class CustomUtils extends customJS.Config.constructor {
       .pages(`"${dv.current().file.folder}"`)
       .where((p) => p.file.name != dv.current().file.name && p.status == status)
       .sort((p) => p.file.mtime, "desc");
-    if (pages.length) {
-      dv.list(pages.file.link);
-    } else {
-      dv.paragraph("No pages to show.");
-    }
+    pages.length > 0
+      ? dv.list(pages.file.link)
+      : dv.paragraph("No pages to show.");
   }
 
   /**
@@ -161,11 +157,9 @@ class CustomUtils extends customJS.Config.constructor {
     for (const status in taskStatuses) {
       dv.header(3, taskStatuses[status].header);
       let taskResults = this.#getTasks(dv, taskStatuses[status].query);
-      if (taskResults.length) {
-        dv.taskList(taskResults, false);
-      } else {
-        dv.paragraph("No tasks to show.");
-      }
+      taskResults.length
+        ? dv.taskList(taskResults, false)
+        : dv.paragraph("No tasks to show.");
     }
   }
 
@@ -174,15 +168,14 @@ class CustomUtils extends customJS.Config.constructor {
    * @param {object} dv - DataviewAPI
    */
   todoTasks(dv) {
-    const todo = this.TASK_STATUS.todo;
-    dv.header(3, todo.header); // render header text from Config
-    const curr_folder = dv.current().file.folder;
-    const taskResults = this.#getTasks(dv, todo.query, curr_folder);
-    if (taskResults.length) {
-      dv.taskList(taskResults, false);
-    } else {
-      dv.paragraph("No tasks to show.");
-    }
+    const { header, query } = this.TASK_STATUS.todo;
+    const currFolder = dv.current().file.folder;
+    const taskResults = this.#getTasks(dv, query, currFolder);
+
+    dv.header(3, header);
+    taskResults.length
+      ? dv.taskList(taskResults, false)
+      : dv.paragraph("No tasks to show.");
   }
 
   /**
@@ -202,19 +195,14 @@ class CustomUtils extends customJS.Config.constructor {
    * @param {object} dv DataviewAPI
    */
   timeSpent(dv) {
-    const firstFile = dv
-      .pages(`"${this.GLOBAL_FOLDER}"`)
-      .file.sort((t) => t.ctime)[0];
-    // NOTE: dv uses Luxon
+    const allFiles = dv.pages(`"${this.GLOBAL_FOLDER}"`).file;
+    const firstFile = allFiles.sort((t) => t.ctime)[0];
     const totalDays = Math.ceil(
       dv.date("now").diff(firstFile.ctime, "days").toObject().days
     );
-    const allFiles = dv.pages(`"${this.GLOBAL_FOLDER}"`).file;
-    const totalFiles = allFiles.length;
-    const totalTasks = allFiles.tasks.length;
 
     dv.paragraph(
-      `You have been using [[Life_OS]] for ${totalDays} days, with ${totalFiles} files & ${totalTasks} tasks created.`
+      `You have been using [[Life_OS]] for ${totalDays} days, with ${allFiles.length} files & ${allFiles.tasks.length} tasks created.`
     );
   }
 
@@ -223,10 +211,10 @@ class CustomUtils extends customJS.Config.constructor {
    * @param {object} dv DataviewAPI
    */
   recentlyModified(dv) {
-    const mod_pages = dv
+    const modPages = dv
       .pages(`"${this.GLOBAL_FOLDER}"`)
       .sort((p) => p.file.mtime, "desc")
       .limit(5).file.link;
-    dv.list(mod_pages);
+    dv.list(modPages);
   }
 }
