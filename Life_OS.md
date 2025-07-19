@@ -12,28 +12,35 @@ CustomUtils.navbarMain(dv);
 const { CustomUtils } = await cJS();
 
 // uncompleted tasks with high priority
-dv.span(`> [!todo] ⏫ High Priority`)
-CustomUtils.renderGlobalTasks(dv, "!t.checked && t.text.includes('⏫')");
-
-// tasks due today or overdue.
-dv.span(`> [!todo] 🔴 Due Today / Overdue`)
+dv.span(`> [!danger] ⚡ **HIGH PRIORITY**`)
 CustomUtils.renderGlobalTasks(
   dv,
-  "!t.checked && !t.text.includes('⏫') && t.due <= moment()"
+  "!t.checked && t.text.includes('⏫')",
+  "Tasks that need your immediate attention."
+);
+
+// tasks due today or overdue.
+dv.span(`> [!warning] 🔥 **DUE TODAY / OVERDUE**`)
+CustomUtils.renderGlobalTasks(
+  dv,
+  "!t.checked && !t.text.includes('⏫') && t.due <= moment()",
+  "Time-sensitive tasks that need to be completed."
 );
 
 // tasks due this week (today + 7 days).
-dv.span(`> [!todo] 🟠 Due This Week`)
+dv.span(`> [!todo] 📅 **THIS WEEK**`)
 CustomUtils.renderGlobalTasks(
   dv,
-  `!t.checked && !t.text.includes("⏫") && moment() <= t.due && t.due <= moment().add(7, "d")`
+  `!t.checked && !t.text.includes("⏫") && moment() <= t.due && t.due <= moment().add(7, "d")`,
+  "Upcoming deadlines in the next 7 days."
 );
 
 // other tasks
-dv.span(`> [!todo] 🟢 Other Tasks`)
+dv.span(`> [!success] 🌱 **PLANNED**`)
 CustomUtils.renderGlobalTasks(
   dv,
-  `!t.checked && !t.text.includes('⏫') && (!t.due || t.due > moment().add(7, "d"))`
+  `!t.checked && !t.text.includes('⏫') && (!t.due || t.due > moment().add(7, "d"))`,
+  "Important but not urgent."
 );
 ```
 ---
@@ -69,8 +76,15 @@ const { CustomUtils } = await cJS();
 
 CustomUtils.timeSpent(dv);
 
-dv.paragraph("Recently modified files:")
-CustomUtils.recentlyModified(dv);
+// Project Status
+const projects = dv.pages('"pages"').file;
+const activeProjects = projects.where(p => p.frontmatter.status === 'in-progress');
+const completedProjects = projects.where(p => p.frontmatter.status === 'completed');
+dv.header(3, "🚀 Project Status");
+dv.paragraph(`🟢 **Active Projects:** ${activeProjects.length}`);
+dv.paragraph(`✅ **Completed Projects:** ${completedProjects.length}`);
 
-dv.paragraph(`Completed Tasks: ${CustomUtils.completedTasks(dv)}`);
+// Recently Modified Files
+dv.header(3, "🔄 Recently Modified");
+CustomUtils.recentlyModified(dv);
 ```

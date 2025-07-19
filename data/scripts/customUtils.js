@@ -134,14 +134,20 @@ class CustomUtils extends customJS.Config.constructor {
    * Renders global tasks according to query, split by folders
    * @param {Object} dv DataviewAPI
    * @param {string} query WHERE clause query
+   * @param {string} [noTasksMessage="No tasks found matching the current criteria."] Message to display when no tasks are found
    */
-  renderGlobalTasks(dv, query) {
+  renderGlobalTasks(dv, query, noTasksMessage = "No tasks found matching the current criteria.") {
+    let hasAnyTasks = false;
     for (const folder in this.DASHBOARDS) {
       // NOTE: limit global tasks per page type to 3
       const taskResults = this.#getTasks(dv, query, this.DASHBOARDS[folder], 3);
       if (taskResults.length) {
         dv.taskList(taskResults);
+        hasAnyTasks = true;
       }
+    }
+    if (!hasAnyTasks) {
+      dv.paragraph(noTasksMessage);
     }
   }
 
