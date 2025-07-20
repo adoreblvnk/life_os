@@ -1,0 +1,24 @@
+# macOS
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon[
+]
+
+# Linux
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# Obsidian
+# The current application UI state (DOM layout, recently-opened files, etc.) is
+# stored in these files (separate for desktop and mobile) so you can resume
+# your session seamlessly after a restart. If you want to track UI state, use
+# the Workspaces core plugin instead of relying on these files.
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json

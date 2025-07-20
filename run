@@ -1,0 +1,134 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# global variables
+
+# ----- PRINT FUNCTIONS -----
+
+# Set text colours if supported.
+# Arguments:
+#   $1: boolean indicating if colours is enabled
+colours() {
+  NC="" BOLD="" RED="" GREEN="" YELLOW="" BLUE="" MAGENTA="" CYAN=""
+  if [[ $(tput colors) -ge 8 ]] && [[ $1 == true ]]; then
+    NC=$(tput sgr0) BOLD=$(tput bold) # text reset (select graphic representation default)
+    RED=$(tput setaf 1) GREEN=$(tput setaf 2) YELLOW=$(tput setaf 3) BLUE=$(tput setaf 4) MAGENTA=$(tput setaf 5) CYAN=$(tput setaf 6)
+  fi
+}
+
+_info_msg() { printf "%s\n" "${BOLD}${BLUE}Info:${NC} $1"; }
+
+_success_msg() { printf "%s\n" "${BOLD}${GREEN}Success:${NC} $1"; }
+
+_warning_msg() { printf "%s\n" "${BOLD}${YELLOW}Warning:${NC} $1"; }
+
+_error_msg() { printf "%s\n" "${BOLD}${RED}Error:${NC} $1" && exit 1; }
+
+_usage() {
+  cat <<EOF
+run script for Life OS
+
+${YELLOW}Usage:${NC} ./run ${CYAN}[Options]${NC} ${CYAN}[Command]${NC}
+
+${YELLOW}Options:${NC}
+  ${GREEN}-n, --no-colour  ${NC} Do not output any colour. Useful when redirecting output to a logfile
+  ${GREEN}-h, --help       ${NC} Print help information
+
+${YELLOW}Commands:${NC}
+  ${GREEN}demo [install|uninstall]${NC}  Install or uninstall demo files. Default is install
+
+${YELLOW}Example:${NC} ./run ${CYAN}demo install${NC}
+
+${YELLOW}Project Homepage:${NC} ${MAGENTA}https://github.com/adoreblvnk/life_os${NC}
+EOF
+}
+
+# ----- SET GLOBAL VARIABLES -----
+
+# Set complex global variables that require commands to be set.
+# Globals:
+_set_global_var() { :; }
+
+# ----- HELPERS -----
+
+# ----- OPTIONS -----
+
+# ----- COMMANDS -----
+
+# Run the demo script.
+# Arguments:
+#   $1: Install / uninstall argument. Default to install. Short forms: i / u
+demo() {
+  local -r demo_dir="data/demo"
+  local -a file_paths=(
+    "0_quick_notes/Dinner Date.md"
+    "1_journal/2024-03-23.md"
+    "4_projects/Debian Setup.md"
+  )
+
+  if [[ $1 == "install" ]] || [[ $1 == "i" ]]; then
+    for file in "${file_paths[@]}"; do
+      if [[ -f "$demo_dir/$file" ]]; then
+        cp "$demo_dir/$file" "pages/$file"
+        _success_msg "Copied $file to pages directory"
+      fi
+    done
+  elif [[ $1 == "uninstall" ]] || [[ $1 == "u" ]]; then
+    for file in "${file_paths[@]}"; do
+      if [[ -f "pages/$file" ]]; then
+        rm -f "pages/$file"
+        _success_msg "Deleted $file"
+      fi
+    done
+  else
+    _error_msg "Invalid argument: $1. Use 'install' or 'uninstall'"
+  fi
+}
+
+# Setup Life OS on a new system
+# Arguments:
+#   $1: Personal branch name. Default to 'personal'
+setup() {
+  local -r personal_branch=$1
+  git branch --unset-upstream main
+  if git show-ref -q --heads "$personal_branch"; then
+    _warning_msg "Branch '$personal_branch' already exists. Switching to it"
+    git switch "$personal_branch"
+  else
+    _info_msg "Creating new branch '$personal_branch'"
+    git switch -c "$personal_branch"
+  fi
+  git push -u origin "$personal_branch"
+}
+
+# ----- MAIN -----
+
+main() {
+  colours true # PRINT FUNCTIONS
+  _set_global_var
+
+  [[ $# -gt 0 ]] || { _usage && _error_msg "No argument(s)"; }
+
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -h | --help) _usage && exit ;;
+      # OPTIONS
+      -n | --no-colour) colours false ;;
+      # COMMANDS
+      demo)
+        local arg="${2:-install}" # Default to install if no argument is provided
+        [[ -n "${2:-}" ]] && shift
+        demo "$arg"
+        ;;
+      setup)
+        local personal_branch="${2:-personal}"
+        [[ -n "${2:-}" ]] && shift
+        setup "$personal_branch"
+        ;;
+      *) _usage && _error_msg "Invalid argument(s)" ;;
+    esac
+    shift
+  done
+}
+
+main "$@"
